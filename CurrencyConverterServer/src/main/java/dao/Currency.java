@@ -1,6 +1,6 @@
 package dao;
 
-import java.util.Date;
+import java.util.Calendar;
 import java.util.HashMap;
 
 /**
@@ -8,10 +8,21 @@ import java.util.HashMap;
  */
 public class Currency {
     private String name;
-    private HashMap<Date, Double> values;
+    private HashMap<Calendar, Double> values;
 
-    public Currency(String name, HashMap<Date, Double> values) {
+    public Currency() {
+    }
+
+    public Currency(String name, HashMap<Calendar, Double> values) {
         this.name = name;
+        this.values = values;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValues(HashMap<Calendar, Double> values) {
         this.values = values;
     }
 
@@ -19,7 +30,15 @@ public class Currency {
         return name;
     }
 
-    public HashMap<Date, Double> getValues() {
+    public HashMap<Calendar, Double> getValues() {
         return values;
+    }
+
+    @Override
+    public String toString() {
+        return "Currency{" +
+                "name='" + name + '\'' +
+                ", values=" + values +
+                '}';
     }
 }
