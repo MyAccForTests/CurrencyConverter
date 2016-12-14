@@ -2,6 +2,8 @@ import dao.Currency;
 import model.Requesters.CurrencyRequester;
 import model.Requesters.FixerioRequester;
 import model.Requesters.OpenexchangerateRequester;
+import model.Sevices.CurrencyCRUDService;
+import model.Sevices.CurrencyMySQLService;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -14,6 +16,9 @@ import java.util.Map;
 public class CurrencyConverterServer {
     public static void main(String[] args)
     {
+        CurrencyCRUDService service=new CurrencyMySQLService();
+        System.out.println(service.getCurrencies());
+        /*
         //Please initialize the log4j system properly.//time-decision
         org.apache.log4j.BasicConfigurator.configure();
         //
@@ -38,5 +43,6 @@ public class CurrencyConverterServer {
             }
         }
         //
+        */
     }
 }

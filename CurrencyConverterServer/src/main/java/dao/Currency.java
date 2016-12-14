@@ -1,14 +1,29 @@
 package dao;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.HashMap;
 
 /**
  * Created by Ilua on 12.12.2016.
  */
-public class Currency {
+@Entity
+@Table(name = "currencies")
+public class Currency implements Serializable{
+    @Id
+    @GeneratedValue
+    private int id;
+    @Column(name = "Abbreviation")
     private String abbreviation;
+    @ElementCollection(fetch = FetchType.LAZY)
+    @OneToMany
+    @CollectionTable(name = "values", joinColumns = @JoinColumn(name = "CurrencyID"))
+    @MapKeyColumn(name = "Date")
+    @Column(name = "value")
     private HashMap<Calendar, Double> values;
+
+    private static final long serialVersionUID = 0000000000001L;
 
     public Currency() {
     }
