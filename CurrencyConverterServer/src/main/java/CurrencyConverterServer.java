@@ -1,6 +1,7 @@
 import dao.Currency;
-import model.CurrencyRequester;
-import model.FixerIORequester;
+import model.Requesters.CurrencyRequester;
+import model.Requesters.FixerioRequester;
+import model.Requesters.OpenexchangerateRequester;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -19,9 +20,9 @@ public class CurrencyConverterServer {
 
         //stable
         Calendar ago=Calendar.getInstance();
-        ago.add(Calendar.DATE,-5);
+        ago.add(Calendar.DATE,-2);
         Calendar now=Calendar.getInstance();
-        CurrencyRequester req=new FixerIORequester(ago,now);
+        CurrencyRequester req=new OpenexchangerateRequester(ago,now);
         List<Currency> list =req.getCurrencies();
         //
 
@@ -29,7 +30,7 @@ public class CurrencyConverterServer {
         for(Currency t:list)
         {
             HashMap<Calendar,Double> tt=t.getValues();
-            System.out.println("For Currency: "+t.getName());
+            System.out.println("Currency: "+t.getAbbreviation());
             for(Map.Entry<Calendar,Double> ttt:tt.entrySet())
             {
                 System.out.println("On: "+ttt.getKey().getTime().toString());
