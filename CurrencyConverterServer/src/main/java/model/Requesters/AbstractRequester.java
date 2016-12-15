@@ -28,7 +28,7 @@ public abstract class AbstractRequester implements CurrencyRequester{
         return fromDate;
     }
 
-    protected void setFromDate(Calendar fromDate) {
+    public void setFromDate(Calendar fromDate) {
         this.fromDate = fromDate;
     }
 
@@ -36,7 +36,7 @@ public abstract class AbstractRequester implements CurrencyRequester{
         return toDate;
     }
 
-    protected void setToDate(Calendar toDate) {
+    public void setToDate(Calendar toDate) {
         this.toDate = toDate;
     }
 }

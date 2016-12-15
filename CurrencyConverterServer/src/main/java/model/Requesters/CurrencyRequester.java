@@ -2,6 +2,7 @@ package model.Requesters;
 
 import dao.Currency;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -9,4 +10,8 @@ import java.util.List;
  */
 public interface CurrencyRequester {
     List<Currency> getCurrencies();
+    Calendar getFromDate();
+    Calendar getToDate();
+    void setFromDate(Calendar fromDate);
+    void setToDate(Calendar toDate);
 }

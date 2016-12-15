@@ -1,9 +1,8 @@
+import Settings.SpringConfiguration;
 import dao.Currency;
-import model.Requesters.CurrencyRequester;
-import model.Requesters.FixerioRequester;
-import model.Requesters.OpenexchangerateRequester;
-import model.Sevices.CurrencyCRUDService;
-import model.Sevices.CurrencyMySQLService;
+import model.Requesters.RequestersController;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -16,19 +15,24 @@ import java.util.Map;
 public class CurrencyConverterServer {
     public static void main(String[] args)
     {
-        CurrencyCRUDService service=new CurrencyMySQLService();
-        System.out.println(service.getCurrencies());
-        /*
         //Please initialize the log4j system properly.//time-decision
         org.apache.log4j.BasicConfigurator.configure();
         //
 
+        ApplicationContext context=new AnnotationConfigApplicationContext(SpringConfiguration.class);
+
+
+        /*
         //stable
+        RequestersController controller= context.getBean(RequestersController.class);
         Calendar ago=Calendar.getInstance();
         ago.add(Calendar.DATE,-2);
         Calendar now=Calendar.getInstance();
-        CurrencyRequester req=new OpenexchangerateRequester(ago,now);
-        List<Currency> list =req.getCurrencies();
+
+        controller.setFromDate(ago);
+        controller.setToDate(now);
+
+        List<Currency> list =controller.getCurrencies();
         //
 
         //testing
@@ -42,7 +46,11 @@ public class CurrencyConverterServer {
                 System.out.println("Course is: "+ttt.getValue());
             }
         }
-        //
+        */
+
+        /*
+        CurrencyCRUDService service=new CurrencyMySQLService();
+        System.out.println(service.getCurrencies());
         */
     }
 }
