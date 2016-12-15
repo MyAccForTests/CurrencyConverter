@@ -30,17 +30,24 @@ public class CurrencyMySQLService extends AbstractService {
         List<Currency> result=null;
         try(Session session=getSessionFactory().openSession())
         {
-            Transaction transaction = session.beginTransaction();
-            Query query=session.createQuery("SELECT FROM currencies where id =:id");
-            query.setParameter("id",1);
-            result=query.list();
-            transaction.commit();
+            Transaction transaction=null;
+            try {
+                transaction = session.beginTransaction();
+                Query query = session.createQuery("SELECT FROM currencies where id =:id");
+                query.setParameter("id", 1);
+                result = query.list();
+                transaction.commit();
+            }
+            catch (Exception e)
+            {
+                transaction.rollback();
+                System.out.println("DB error happens!");
+            }
         }
         catch (Exception e)
         {
-                System.out.println("DB error happens!");
+            System.out.println("DB error happens!");
         }
-
         return result;
     }
 
