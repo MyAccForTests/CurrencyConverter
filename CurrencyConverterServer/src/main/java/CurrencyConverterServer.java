@@ -1,4 +1,4 @@
-import Settings.SpringConfiguration;
+import settings.SpringConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,7 +17,7 @@ public class CurrencyConverterServer {
 
         /*
         //stable
-        RequesterService controller= context.getBean(RequesterService.class);
+        CurrencyRequesterService controller= context.getBean(CurrencyRequesterService.class);
         Calendar ago=Calendar.getInstance();
         ago.add(Calendar.DATE,-2);
         Calendar now=Calendar.getInstance();

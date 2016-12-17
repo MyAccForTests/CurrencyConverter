@@ -1,12 +1,7 @@
-package Settings;
+package settings;
 
-import model.Services.DAOSevice.CurrencyService;
-import model.Services.RequestersService.RequesterService;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-
-import javax.inject.Inject;
 
 /**
  * Created by Ilua on 15.12.2016.

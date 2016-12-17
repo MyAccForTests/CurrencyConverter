@@ -1,10 +1,7 @@
-package Settings;
+package settings;
 
-import Requesters.CurrencyRequester;
-import Requesters.FixerioRequester;
-import Requesters.OpenexchangerateRequester;
-import model.Services.DAOSevice.CurrencyService;
-import model.Services.RequestersService.RequesterService;
+import model.services.CurrencyDAOService;
+import model.services.CurrencyRequesterService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,15 +17,15 @@ public class SpringServicesConfiguration {
     private SpringDAOConfiguration springDAOConfiguration;
 
     @Bean
-    public RequesterService requestersController()
+    public CurrencyRequesterService requestersController()
     {
-        return new RequesterService(springRequestersConfiguration.getCurrencyRequester());
+        return new CurrencyRequesterService(springRequestersConfiguration.getCurrencyRequester());
     }
 
     @Bean
-    public CurrencyService currencyService()
+    public CurrencyDAOService currencyService()
     {
-        return new CurrencyService(springDAOConfiguration.getCurrencyDAO());
+        return new CurrencyDAOService(springDAOConfiguration.getCurrencyDAO());
     }
 
 }

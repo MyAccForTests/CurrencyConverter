@@ -1,8 +1,8 @@
-package Settings;
+package settings;
 
-import Requesters.CurrencyRequester;
-import Requesters.FixerioRequester;
-import Requesters.OpenexchangerateRequester;
+import requesters.CurrencyRequester;
+import requesters.FixerioRequester;
+import requesters.OpenexchangerateRequester;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

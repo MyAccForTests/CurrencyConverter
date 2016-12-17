@@ -1,6 +1,6 @@
-package Requesters;
+package requesters;
 
-import model.Entities.Currency;
+import model.entities.Currency;
 
 import java.util.Calendar;
 import java.util.List;

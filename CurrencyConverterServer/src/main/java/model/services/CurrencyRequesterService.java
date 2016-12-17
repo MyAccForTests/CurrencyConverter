@@ -1,7 +1,7 @@
-package model.Services.RequestersService;
+package model.services;
 
-import Requesters.CurrencyRequester;
-import model.Entities.Currency;
+import requesters.CurrencyRequester;
+import model.entities.Currency;
 
 import java.util.Calendar;
 import java.util.List;
@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
-public class RequesterService implements CurrencyRequester {
+public class CurrencyRequesterService implements CurrencyRequester {
 
     private CurrencyRequester service;
 
-    public RequesterService(CurrencyRequester service) {
+    public CurrencyRequesterService(CurrencyRequester service) {
         this.service = service;
     }
 

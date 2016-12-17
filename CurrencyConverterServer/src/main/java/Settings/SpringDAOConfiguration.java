@@ -1,4 +1,4 @@
-package Settings;
+package settings;
 
 import dao.CurrencyDAO;
 import dao.CurrencyDAOMySQL;

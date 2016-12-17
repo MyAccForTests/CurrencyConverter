@@ -1,6 +1,6 @@
 package dao;
 
-import model.Entities.Currency;
+import model.entities.Currency;
 import org.hibernate.SessionFactory;
 
 import java.util.Calendar;

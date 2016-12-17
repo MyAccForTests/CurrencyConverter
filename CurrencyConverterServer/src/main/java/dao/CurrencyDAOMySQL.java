@@ -1,6 +1,6 @@
 package dao;
 
-import model.Entities.Currency;
+import model.entities.Currency;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -33,7 +33,7 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
             Transaction transaction=null;
             try {
                 transaction = session.beginTransaction();
-                Query query = session.createQuery("SELECT FROM currencies WHERE id =:id");
+                Query query = session.createQuery("FROM Currency cur WHERE cur.id =:id");
                 query.setParameter("id", 1);
                 result = query.list();
                 transaction.commit();
