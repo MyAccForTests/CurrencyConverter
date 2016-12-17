@@ -1,6 +1,7 @@
-package model.Sevices;
+package model.Services.DAOSevice;
 
-import dao.Currency;
+import dao.CurrencyDAO;
+import model.Entities.Currency;
 
 import java.util.Calendar;
 import java.util.List;
@@ -8,11 +9,11 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
-public class CurrencyServiceController implements CurrencyCRUDService {
+public class CurrencyService implements CurrencyDAO {
 
-    private CurrencyCRUDService service;
+    private CurrencyDAO service;
 
-    public CurrencyServiceController(CurrencyCRUDService service) {
+    public CurrencyService(CurrencyDAO service) {
         this.service = service;
     }
 

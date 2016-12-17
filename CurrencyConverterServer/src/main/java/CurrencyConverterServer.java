@@ -1,13 +1,6 @@
 import Settings.SpringConfiguration;
-import dao.Currency;
-import model.Requesters.RequestersController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Ilua on 13.12.2016.
@@ -24,7 +17,7 @@ public class CurrencyConverterServer {
 
         /*
         //stable
-        RequestersController controller= context.getBean(RequestersController.class);
+        RequesterService controller= context.getBean(RequesterService.class);
         Calendar ago=Calendar.getInstance();
         ago.add(Calendar.DATE,-2);
         Calendar now=Calendar.getInstance();
@@ -49,7 +42,7 @@ public class CurrencyConverterServer {
         */
 
         /*
-        CurrencyCRUDService service=new CurrencyMySQLService();
+        CurrencyDAO service=new CurrencyDAOMySQL();
         System.out.println(service.getCurrencies());
         */
     }

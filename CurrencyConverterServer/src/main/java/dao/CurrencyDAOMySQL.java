@@ -1,6 +1,6 @@
-package model.Sevices;
+package dao;
 
-import dao.Currency;
+import model.Entities.Currency;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -12,9 +12,9 @@ import java.util.List;
 /**
  * Created by Ilua on 14.12.2016.
  */
-public class CurrencyMySQLService extends AbstractService {
+public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
 
-    public CurrencyMySQLService(SessionFactory sessionFactory) {
+    public CurrencyDAOMySQL(SessionFactory sessionFactory) {
         super(sessionFactory);
     }
 
@@ -33,7 +33,7 @@ public class CurrencyMySQLService extends AbstractService {
             Transaction transaction=null;
             try {
                 transaction = session.beginTransaction();
-                Query query = session.createQuery("SELECT FROM currencies where id =:id");
+                Query query = session.createQuery("SELECT FROM currencies WHERE id =:id");
                 query.setParameter("id", 1);
                 result = query.list();
                 transaction.commit();

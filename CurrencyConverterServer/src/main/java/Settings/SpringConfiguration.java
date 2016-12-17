@@ -1,6 +1,7 @@
 package Settings;
 
-import model.Requesters.RequestersController;
+import model.Services.DAOSevice.CurrencyService;
+import model.Services.RequestersService.RequesterService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -13,16 +14,9 @@ import javax.inject.Inject;
 @Configuration
 @Import({
         SpringDAOConfiguration.class,
-        SpringRequestersConfiguration.class,
-        //SpringServicesConfiguration.class
+        SpringServicesConfiguration.class,
+        SpringRequestersConfiguration.class
         })
 public class SpringConfiguration {
-        @Inject
-        private SpringRequestersConfiguration requestersConfiguration;
 
-        @Bean
-        public RequestersController requestersController()
-        {
-                return new RequestersController(requestersConfiguration.fixerioRequester());
-        }
 }

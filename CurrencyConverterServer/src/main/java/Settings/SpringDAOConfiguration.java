@@ -1,6 +1,7 @@
 package Settings;
 
-import dao.Currency;
+import dao.CurrencyDAO;
+import dao.CurrencyDAOMySQL;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,9 +11,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringDAOConfiguration {
 
+    private CurrencyDAO currencyDAO=currencyMySQLService();
+
+    public CurrencyDAO getCurrencyDAO() {
+        return currencyDAO;
+    }
+
     @Bean
-    public Currency currency()
+    public CurrencyDAO currencyMySQLService()
     {
-        return new Currency();
+        return new CurrencyDAOMySQL();
     }
 }

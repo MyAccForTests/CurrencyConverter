@@ -1,7 +1,6 @@
-package model.Requesters;
+package Requesters;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import dao.Currency;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
@@ -26,11 +25,11 @@ public class FixerioRequester extends AbstractRequester{
         super(fromDate, toDate);
     }
     //abstract method realisation
-    public List<Currency> getCurrencies()
+    public List<model.Entities.Currency> getCurrencies()
     {
         RestTemplate restTemplate = new RestTemplate();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        HashMap<String, Currency> tempResult = new HashMap<String, Currency>();
+        HashMap<String, model.Entities.Currency> tempResult = new HashMap<String, model.Entities.Currency>();
         while (getFromDate().compareTo(getToDate()) <= 0) {
             StringBuilder url = new StringBuilder(urlTemplateFirst);
             url.append(sdf.format(getFromDate().getTime()));
@@ -40,16 +39,16 @@ public class FixerioRequester extends AbstractRequester{
             addCurrencyToList(tempResult, incomingResponse);
             getFromDate().add(Calendar.DATE, 1);
         }
-        return new ArrayList<Currency>(tempResult.values());
+        return new ArrayList<model.Entities.Currency>(tempResult.values());
     }
     //some helping methods
-    private void addCurrencyToList(HashMap<String, Currency> map, IncomingResponse incomingResponse)
+    private void addCurrencyToList(HashMap<String, model.Entities.Currency> map, IncomingResponse incomingResponse)
     {
         for(Map.Entry<String,Double> entry:incomingResponse.getRates().entrySet())
         {
             if(!map.containsKey(entry.getKey()))
             {
-                map.put(entry.getKey(),new Currency(entry.getKey(),new HashMap<Calendar, Double>()));
+                map.put(entry.getKey(),new model.Entities.Currency(entry.getKey(),new HashMap<Calendar, Double>()));
             }
             Calendar date=Calendar.getInstance();
             date.setTime(incomingResponse.getDate());

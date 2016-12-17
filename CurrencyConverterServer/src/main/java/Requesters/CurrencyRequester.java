@@ -1,6 +1,6 @@
-package model.Requesters;
+package Requesters;
 
-import dao.Currency;
+import model.Entities.Currency;
 
 import java.util.Calendar;
 import java.util.List;

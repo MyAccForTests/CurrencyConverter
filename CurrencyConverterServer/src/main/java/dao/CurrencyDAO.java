@@ -1,6 +1,6 @@
-package model.Sevices;
+package dao;
 
-import dao.Currency;
+import model.Entities.Currency;
 
 import java.util.Calendar;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Ilua on 14.12.2016.
  */
-public interface CurrencyCRUDService {
+public interface CurrencyDAO {
     void add (List<Currency> list);
     void update(List<Currency> list);
     List<Currency> getCurrencies();

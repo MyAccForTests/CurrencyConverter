@@ -1,6 +1,6 @@
-package model.Sevices;
+package dao;
 
-import dao.Currency;
+import model.Entities.Currency;
 import org.hibernate.SessionFactory;
 
 import java.util.Calendar;
@@ -9,10 +9,10 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
-public abstract class AbstractService implements CurrencyCRUDService {
+public abstract class CurrencyDAOAbstract implements CurrencyDAO {
     private SessionFactory sessionFactory;
 
-    public AbstractService(SessionFactory sessionFactory) {
+    public CurrencyDAOAbstract(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
