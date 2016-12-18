@@ -5,21 +5,21 @@ import java.util.Calendar;
 /**
  * Created by Ilua on 13.12.2016.
  */
-public abstract class AbstractRequester implements CurrencyRequester{
+public abstract class CurrencyRequesterAbstract implements CurrencyRequester{
     private Calendar fromDate;
     private Calendar toDate;
 
-    public AbstractRequester() {
+    public CurrencyRequesterAbstract() {
         this.fromDate = Calendar.getInstance();
         this.toDate = Calendar.getInstance();
     }
 
-    public AbstractRequester(Calendar fromDate) {
+    public CurrencyRequesterAbstract(Calendar fromDate) {
         this.fromDate = fromDate;
         this.toDate = Calendar.getInstance();
     }
 
-    protected AbstractRequester(Calendar fromDate, Calendar toDate) {
+    protected CurrencyRequesterAbstract(Calendar fromDate, Calendar toDate) {
         this.fromDate = fromDate;
         this.toDate = toDate;
     }

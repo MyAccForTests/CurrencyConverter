@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
-public class CurrencyFixerioRequester extends AbstractRequester{
+public class CurrencyFixerioRequester extends CurrencyRequesterAbstract {
     //request format: "http://api.fixer.io/2000-01-01?base=USD"
     private String urlTemplateFirst ="http://api.fixer.io/";
     private String urlTemplateSecond="?base=USD";

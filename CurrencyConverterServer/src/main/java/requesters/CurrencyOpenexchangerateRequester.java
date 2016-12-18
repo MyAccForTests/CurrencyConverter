@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
-public class CurrencyOpenexchangerateRequester extends AbstractRequester{
+public class CurrencyOpenexchangerateRequester extends CurrencyRequesterAbstract {
     //request format: "https://openexchangerates.org/api/historical/2001-02-16.json?app_id=YOUR_APP_APP_ID"
     private String urlTemplateFirst ="https://openexchangerates.org/api/historical/";
     private String appID="f437a02f7306440a813e8d277a75bb9c";
