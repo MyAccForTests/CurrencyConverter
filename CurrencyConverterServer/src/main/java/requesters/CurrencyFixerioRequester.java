@@ -10,18 +10,18 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
-public class FixerioRequester extends AbstractRequester{
+public class CurrencyFixerioRequester extends AbstractRequester{
     //request format: "http://api.fixer.io/2000-01-01?base=USD"
     private String urlTemplateFirst ="http://api.fixer.io/";
     private String urlTemplateSecond="?base=USD";
     //if empty constructor-requesting for today
-    public FixerioRequester() {}
+    public CurrencyFixerioRequester() {}
     //requesting from dates from fromDate to today
-    public FixerioRequester(Calendar fromDate) {
+    public CurrencyFixerioRequester(Calendar fromDate) {
         super(fromDate);
     }
     //requesting from dates from fromDate to toDate
-    public FixerioRequester(Calendar fromDate, Calendar toDate) {
+    public CurrencyFixerioRequester(Calendar fromDate, Calendar toDate) {
         super(fromDate, toDate);
     }
     //abstract method realisation

@@ -10,20 +10,20 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
-public class OpenexchangerateRequester extends AbstractRequester{
+public class CurrencyOpenexchangerateRequester extends AbstractRequester{
     //request format: "https://openexchangerates.org/api/historical/2001-02-16.json?app_id=YOUR_APP_APP_ID"
     private String urlTemplateFirst ="https://openexchangerates.org/api/historical/";
     private String appID="f437a02f7306440a813e8d277a75bb9c";
     private String urlTemplateSecond=".json?app_id="+appID;
 
     //if empty constructor-requesting for today
-    public OpenexchangerateRequester() {}
+    public CurrencyOpenexchangerateRequester() {}
     //requesting from dates from fromDate to today
-    public OpenexchangerateRequester(Calendar fromDate) {
+    public CurrencyOpenexchangerateRequester(Calendar fromDate) {
         super(fromDate);
     }
     //requesting from dates from fromDate to toDate
-    public OpenexchangerateRequester(Calendar fromDate, Calendar toDate) {
+    public CurrencyOpenexchangerateRequester(Calendar fromDate, Calendar toDate) {
         super(fromDate, toDate);
     }
     //abstract method realisation

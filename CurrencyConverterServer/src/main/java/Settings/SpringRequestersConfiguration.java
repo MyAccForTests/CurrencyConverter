@@ -1,8 +1,8 @@
 package settings;
 
 import requesters.CurrencyRequester;
-import requesters.FixerioRequester;
-import requesters.OpenexchangerateRequester;
+import requesters.CurrencyFixerioRequester;
+import requesters.CurrencyOpenexchangerateRequester;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,12 +21,12 @@ public class SpringRequestersConfiguration {
     @Bean
     public CurrencyRequester fixerioRequester()
     {
-        return new FixerioRequester();
+        return new CurrencyFixerioRequester();
     }
 
     @Bean
     public CurrencyRequester openexchangerateRequester()
     {
-        return new OpenexchangerateRequester();
+        return new CurrencyOpenexchangerateRequester();
     }
 }
