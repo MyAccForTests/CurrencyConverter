@@ -2,6 +2,9 @@ package settings;
 
 import dao.CurrencyDAO;
 import dao.CurrencyDAOMySQL;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,17 +12,14 @@ import org.springframework.context.annotation.Configuration;
  * Created by Ilua on 15.12.2016.
  */
 @Configuration
-public class SpringDAOConfiguration {
-
-    private CurrencyDAO currencyDAO=currencyMySQLService();
-
-    public CurrencyDAO getCurrencyDAO() {
-        return currencyDAO;
-    }
-
+public class SpringDAOConfiguration
+{
+    /*
     @Bean
-    public CurrencyDAO currencyMySQLService()
-    {
-        return new CurrencyDAOMySQL();
+    @Autowired
+
+    public CurrencyDAO currencyDAO(SessionFactory sessionFactory) {
+        return new CurrencyDAOMySQL(sessionFactory);
     }
+    */
 }

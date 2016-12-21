@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class SpringRequestersConfiguration {
-
+/*
     private CurrencyRequester currencyRequester=fixerioRequester();
 
     public CurrencyRequester getCurrencyRequester() {
@@ -29,4 +29,5 @@ public class SpringRequestersConfiguration {
     {
         return new CurrencyOpenexchangerateRequester();
     }
+    */
 }

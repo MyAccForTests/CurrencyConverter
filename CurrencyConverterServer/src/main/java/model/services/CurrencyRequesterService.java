@@ -1,5 +1,6 @@
 package model.services;
 
+import org.springframework.stereotype.Service;
 import requesters.CurrencyRequester;
 import model.entities.Currency;
 

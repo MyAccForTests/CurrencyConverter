@@ -27,27 +27,10 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
     }
 
     public List<Currency> getCurrencies() {
-        List<Currency> result=null;
-        try(Session session=getSessionFactory().openSession())
-        {
-            Transaction transaction=null;
-            try {
-                transaction = session.beginTransaction();
-                Query query = session.createQuery("FROM Currency cur WHERE cur.id =:id");
-                query.setParameter("id", 1);
-                result = query.list();
-                transaction.commit();
-            }
-            catch (Exception e)
-            {
-                transaction.rollback();
-                System.out.println("DB error happens!");
-            }
-        }
-        catch (Exception e)
-        {
-            System.out.println("DB error happens!");
-        }
+        Session session=getSessionFactory().getCurrentSession();
+        Query query = session.createQuery("FROM Currency cur WHERE cur.id =:id");
+        query.setParameter("id", 1);
+        List<Currency> result= query.list();
         return result;
     }
 
