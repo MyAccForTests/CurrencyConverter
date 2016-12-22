@@ -1,8 +1,12 @@
 package settings;
 
+import model.services.CurrencyRequesterService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
+import requesters.CurrencyOpenexchangerateRequester;
 import requesters.CurrencyRequester;
 import requesters.CurrencyFixerioRequester;
-import requesters.CurrencyOpenexchangerateRequester;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,23 +15,34 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class SpringRequestersConfiguration {
-/*
-    private CurrencyRequester currencyRequester=fixerioRequester();
 
-    public CurrencyRequester getCurrencyRequester() {
-        return currencyRequester;
-    }
-
-    @Bean
-    public CurrencyRequester fixerioRequester()
+    @Profile("OpenExchangeRate")
+    @Bean (name = "OpenExchangeRateService")
+    public CurrencyRequesterService currencyOpenexchangerateService()
     {
-        return new CurrencyFixerioRequester();
+        CurrencyRequesterService service=new CurrencyRequesterService();
+        service.setService(currencyOpenexchangerateRequester());
+        return service;
     }
 
     @Bean
-    public CurrencyRequester openexchangerateRequester()
+    public CurrencyRequester currencyOpenexchangerateRequester()
     {
         return new CurrencyOpenexchangerateRequester();
     }
-    */
+
+    @Profile("FixerIO")
+    @Bean (name = "FixerIOService")
+    public CurrencyRequesterService currencyFixerioService()
+    {
+        CurrencyRequesterService service=new CurrencyRequesterService();
+        service.setService(currencyFixerioRequester());
+        return service;
+    }
+
+    @Bean
+    public CurrencyRequester currencyFixerioRequester()
+    {
+        return new CurrencyFixerioRequester();
+    }
 }

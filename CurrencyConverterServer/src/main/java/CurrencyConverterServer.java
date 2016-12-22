@@ -1,4 +1,4 @@
-import model.services.CurrencyDAOService;
+import model.services.CurrencyDBService;
 import settings.SpringConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,11 +12,12 @@ public class CurrencyConverterServer {
         org.apache.log4j.BasicConfigurator.configure();
         //
 
-        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(SpringConfiguration.class);
-        //context.register(SpringDAOConfiguration.class);
-        context.register(CurrencyDAOService.class);
-        //CurrencyDAOService currencyDAOService=context.getBean(CurrencyDAOService.class);
-        CurrencyDAOService currencyDAOService= (CurrencyDAOService) context.getBean("s");
+        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
+        context.register(SpringConfiguration.class);
+        context.getEnvironment().setActiveProfiles("MySQL","FixerIO");
+        context.refresh();
+
+        CurrencyDBService currencyDAOService= (CurrencyDBService) context.getBean(CurrencyDBService.class);
 
         /*
         //stable

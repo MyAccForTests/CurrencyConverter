@@ -13,6 +13,8 @@ import java.util.List;
  * Created by Ilua on 14.12.2016.
  */
 public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
+    public CurrencyDAOMySQL() {
+    }
 
     public CurrencyDAOMySQL(SessionFactory sessionFactory) {
         super(sessionFactory);

@@ -10,9 +10,17 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
+//@Service("CurrencyRequesterService")
 public class CurrencyRequesterService implements CurrencyRequester {
 
     private CurrencyRequester service;
+
+    public CurrencyRequesterService() {
+    }
+
+    public void setService(CurrencyRequester service) {
+        this.service = service;
+    }
 
     public CurrencyRequesterService(CurrencyRequester service) {
         this.service = service;

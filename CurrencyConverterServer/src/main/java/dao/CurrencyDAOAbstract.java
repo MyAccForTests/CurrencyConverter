@@ -12,6 +12,9 @@ import java.util.List;
 public abstract class CurrencyDAOAbstract implements CurrencyDAO {
     private SessionFactory sessionFactory;
 
+    public CurrencyDAOAbstract() {
+    }
+
     public CurrencyDAOAbstract(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
