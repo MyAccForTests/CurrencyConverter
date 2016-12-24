@@ -1,4 +1,4 @@
-package settings;
+package settings.DBSettings;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -18,9 +18,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * Created by Ilua on 21.12.2016.
  */
 @Configuration
-//@EnableTransactionManagement
+@EnableTransactionManagement
 @PropertySource(value = "classpath:hibernate.properties")
-public class HibernateConfiguration {
+public class HibernateMySQLConfiguration {
     @Autowired
     private Environment environment;
     private String[] entities=new String[] { "main.java.model.model.entities" };
@@ -50,12 +50,12 @@ public class HibernateConfiguration {
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
         return properties;
     }
-
+/*
     @Bean
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
         HibernateTransactionManager txManager = new HibernateTransactionManager();
         txManager.setSessionFactory(sessionFactory);
         return txManager;
-    }
+    */
 }

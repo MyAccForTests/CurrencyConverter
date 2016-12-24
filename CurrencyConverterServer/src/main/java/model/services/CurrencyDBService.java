@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
-@Component
+@Service
 @Transactional
 public class CurrencyDBService implements CurrencyDAO {
 

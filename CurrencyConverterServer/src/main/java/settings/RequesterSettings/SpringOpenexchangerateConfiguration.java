@@ -1,4 +1,4 @@
-package settings;
+package settings.RequesterSettings;
 
 import model.services.CurrencyRequesterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,35 +14,19 @@ import org.springframework.context.annotation.Configuration;
  * Created by Ilua on 15.12.2016.
  */
 @Configuration
-public class SpringRequestersConfiguration {
+@Profile("OpenExchangeRate")
+public class SpringOpenexchangerateConfiguration {
 
-    @Profile("OpenExchangeRate")
     @Bean (name = "OpenExchangeRateService")
-    public CurrencyRequesterService currencyOpenexchangerateService()
+    public CurrencyRequesterService currencyRequesterService()
     {
         CurrencyRequesterService service=new CurrencyRequesterService();
-        service.setService(currencyOpenexchangerateRequester());
+        service.setService(currencyRequester());
         return service;
     }
-
     @Bean
-    public CurrencyRequester currencyOpenexchangerateRequester()
+    public CurrencyRequester currencyRequester()
     {
         return new CurrencyOpenexchangerateRequester();
-    }
-
-    @Profile("FixerIO")
-    @Bean (name = "FixerIOService")
-    public CurrencyRequesterService currencyFixerioService()
-    {
-        CurrencyRequesterService service=new CurrencyRequesterService();
-        service.setService(currencyFixerioRequester());
-        return service;
-    }
-
-    @Bean
-    public CurrencyRequester currencyFixerioRequester()
-    {
-        return new CurrencyFixerioRequester();
     }
 }

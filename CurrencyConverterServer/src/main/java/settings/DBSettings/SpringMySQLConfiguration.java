@@ -1,4 +1,4 @@
-package settings;
+package settings.DBSettings;
 
 import dao.CurrencyDAO;
 import dao.CurrencyDAOMySQL;
@@ -13,9 +13,9 @@ import org.springframework.context.annotation.Profile;
  * Created by Ilua on 15.12.2016.
  */
 @Configuration
-public class SpringDAOConfiguration
+@Profile("MySQL")
+public class SpringMySQLConfiguration
 {
-    @Profile("MySQL")
     @Bean
     @Autowired
     public CurrencyDBService currencyDBService(CurrencyDAO currencyDAO)
@@ -25,7 +25,7 @@ public class SpringDAOConfiguration
 
     @Bean
     @Autowired
-    public CurrencyDAO currencyDAOMySQL(SessionFactory sessionFactory)
+    public CurrencyDAO currencyDAO(SessionFactory sessionFactory)
     {
         return new CurrencyDAOMySQL(sessionFactory);
     }
