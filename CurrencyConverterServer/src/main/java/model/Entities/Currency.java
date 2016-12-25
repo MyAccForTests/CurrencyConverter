@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class Currency implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "Abbreviation")
