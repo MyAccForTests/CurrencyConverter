@@ -11,11 +11,14 @@ import java.util.HashMap;
 @Entity
 @Table(name = "currencies")
 public class Currency implements Serializable{
+
     @Id
     @GeneratedValue
     private int id;
+
     @Column(name = "Abbreviation")
     private String abbreviation;
+
     @ElementCollection(fetch = FetchType.LAZY)
     @OneToMany
     @CollectionTable(name = "values", joinColumns = @JoinColumn(name = "CurrencyID"))
