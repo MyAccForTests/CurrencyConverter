@@ -5,6 +5,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Repository;
 
 import java.util.Calendar;
 import java.util.List;
@@ -12,12 +14,9 @@ import java.util.List;
 /**
  * Created by Ilua on 14.12.2016.
  */
+@Repository("MySQL")
 public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
     public CurrencyDAOMySQL() {
-    }
-
-    public CurrencyDAOMySQL(SessionFactory sessionFactory) {
-        super(sessionFactory);
     }
 
     public void add(List<Currency> list) {
@@ -32,7 +31,7 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
         Session session=getSessionFactory().getCurrentSession();
         Query query = session.createQuery("FROM Currency cur WHERE cur.id =:id");
         query.setParameter("id", 1);
-        List<Currency> result= query.list();
+        List result= query.list();
         return result;
     }
 

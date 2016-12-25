@@ -2,6 +2,7 @@ package dao;
 
 import model.entities.Currency;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Calendar;
 import java.util.List;
@@ -10,13 +11,10 @@ import java.util.List;
  * Created by Ilua on 15.12.2016.
  */
 public abstract class CurrencyDAOAbstract implements CurrencyDAO {
+    @Autowired
     private SessionFactory sessionFactory;
 
     public CurrencyDAOAbstract() {
-    }
-
-    public CurrencyDAOAbstract(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
     }
 
     public SessionFactory getSessionFactory() {

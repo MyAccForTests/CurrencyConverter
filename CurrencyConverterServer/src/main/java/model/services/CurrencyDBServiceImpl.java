@@ -2,6 +2,7 @@ package model.services;
 
 import dao.CurrencyDAO;
 import model.entities.Currency;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,16 +13,17 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
-@Service
+@Service("dbService")
 @Transactional
-public class CurrencyDBService implements CurrencyDAO {
+public class CurrencyDBServiceImpl implements CurrencyDAOService {
 
+    @Autowired
     private CurrencyDAO service;
 
-    public CurrencyDBService() {
+    public CurrencyDBServiceImpl() {
     }
 
-    public CurrencyDBService(CurrencyDAO service) {
+    public CurrencyDBServiceImpl(CurrencyDAO service) {
         this.service = service;
     }
 

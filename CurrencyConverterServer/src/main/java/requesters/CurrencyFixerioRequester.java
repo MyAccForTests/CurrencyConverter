@@ -1,6 +1,7 @@
 package requesters;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
@@ -10,6 +11,7 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
+@Repository("FixerIO")
 public class CurrencyFixerioRequester extends CurrencyRequesterAbstract {
     //request format: "http://api.fixer.io/2000-01-01?base=USD"
     private String urlTemplateFirst ="http://api.fixer.io/";

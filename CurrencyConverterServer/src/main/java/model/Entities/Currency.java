@@ -19,7 +19,8 @@ public class Currency implements Serializable{
     @ElementCollection(fetch = FetchType.LAZY)
     @OneToMany
     @CollectionTable(name = "values", joinColumns = @JoinColumn(name = "CurrencyID"))
-    @MapKeyColumn(name = "Date")
+    //@Temporal(TemporalType.DATE)
+    @MapKeyColumn(name = "Date" )
     @Column(name = "value")
     private HashMap<Calendar, Double> values;
 

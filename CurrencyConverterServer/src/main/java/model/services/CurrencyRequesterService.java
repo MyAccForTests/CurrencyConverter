@@ -1,52 +1,19 @@
 package model.services;
 
-import org.springframework.stereotype.Service;
-import requesters.CurrencyRequester;
 import model.entities.Currency;
+import requesters.CurrencyRequester;
 
 import java.util.Calendar;
 import java.util.List;
 
 /**
- * Created by Ilua on 15.12.2016.
+ * Created by Ilua on 13.12.2016.
  */
-public class CurrencyRequesterService implements CurrencyRequester {
-
-    private CurrencyRequester service;
-
-    public CurrencyRequesterService() {
-    }
-
-    public void setService(CurrencyRequester service) {
-        this.service = service;
-    }
-
-    public CurrencyRequesterService(CurrencyRequester service) {
-        this.service = service;
-    }
-
-    @Override
-    public List<Currency> getCurrencies() {
-        return service.getCurrencies();
-    }
-
-    @Override
-    public Calendar getFromDate() {
-        return service.getFromDate();
-    }
-
-    @Override
-    public Calendar getToDate() {
-        return service.getToDate();
-    }
-
-    @Override
-    public void setFromDate(Calendar fromDate) {
-        service.setFromDate(fromDate);
-    }
-
-    @Override
-    public void setToDate(Calendar toDate) {
-        service.setToDate(toDate);
-    }
+public interface CurrencyRequesterService {
+    List<Currency> getCurrencies();
+    Calendar getFromDate();
+    Calendar getToDate();
+    void setFromDate(Calendar fromDate);
+    void setToDate(Calendar toDate);
+    void setService(CurrencyRequester service);
 }

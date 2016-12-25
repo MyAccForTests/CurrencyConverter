@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by Ilua on 15.12.2016.
  */
 @Configuration
-@ComponentScan({"settings"})
+@ComponentScan({"settings","dao","requesters","model"})
 public class SpringConfiguration {
 
 }

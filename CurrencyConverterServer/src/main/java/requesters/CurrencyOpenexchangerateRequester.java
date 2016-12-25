@@ -1,6 +1,7 @@
 package requesters;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
@@ -10,6 +11,7 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
+@Repository("CurrencyOpenExchangeRate")
 public class CurrencyOpenexchangerateRequester extends CurrencyRequesterAbstract {
     //request format: "https://openexchangerates.org/api/historical/2001-02-16.json?app_id=YOUR_APP_APP_ID"
     private String urlTemplateFirst ="https://openexchangerates.org/api/historical/";
