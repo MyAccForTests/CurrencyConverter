@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfiguration {
     @Autowired
     private Environment environment;
-    private String[] entities=new String[] { "main.java.model.model.entities" };
+    private String[] entities=new String[] { "model.entities" };
 
     @Bean
     public LocalSessionFactoryBean  sessionFactory() {

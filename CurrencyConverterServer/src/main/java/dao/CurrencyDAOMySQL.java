@@ -2,10 +2,7 @@ package dao;
 
 import model.entities.Currency;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
 
 import java.util.Calendar;
@@ -29,7 +26,7 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
 
     public List<Currency> getCurrencies() {
         Session session=getSessionFactory().getCurrentSession();
-        Query query = session.createQuery("FROM Currency cur WHERE cur.id =:id");
+        Query query = session.createQuery("FROM Currency WHERE id =:id");
         query.setParameter("id", 1);
         List result= query.list();
         return result;
