@@ -26,9 +26,8 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
 
     public List<Currency> getCurrencies() {
         Session session=getSessionFactory().getCurrentSession();
-        Query query = session.createQuery("FROM Currency WHERE id =:id");
-        query.setParameter("id", 1);
-        List result= query.list();
+        Query query = session.createQuery("SELECT cur FROM Currency cur JOIN cur.values");
+        List<Currency> result=query.list();
         return result;
     }
 

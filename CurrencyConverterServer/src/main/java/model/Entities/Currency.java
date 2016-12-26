@@ -22,12 +22,12 @@ public class Currency implements Serializable{
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
-            name = "values",
+            name = "courses",
             joinColumns = @JoinColumn(name = "CurrencyID")
     )
     @MapKeyTemporal(TemporalType.DATE)
     @MapKeyColumn(name="Date")
-    @Column(name = "Value")
+    @Column(name = "Course")
     private Map<Calendar, Double> values=new HashMap<>();
 
     private static final long serialVersionUID = 0000000000001L;

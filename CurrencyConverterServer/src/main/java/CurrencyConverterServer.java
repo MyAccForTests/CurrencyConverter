@@ -26,10 +26,17 @@ public class CurrencyConverterServer {
 
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
 
-        List res=currencyDAOService.getCurrencies();
-        for(Object s:res)
+        List<Currency> res=currencyDAOService.getCurrencies();
+        System.out.println(res.size());
+        for(Currency s:res)
         {
-            System.out.println(s);
+            System.out.println(s.getAbbreviation());
+            Map<Calendar,Double> values=s.getValues();
+            for(Map.Entry<Calendar,Double> ttt:values.entrySet())
+            {
+                System.out.println("On: "+ttt.getKey().getTime().toString());
+                System.out.println("Course is: "+ttt.getValue());
+            }
         }
 
         //stable DBrequest
