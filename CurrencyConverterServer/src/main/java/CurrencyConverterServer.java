@@ -24,6 +24,8 @@ public class CurrencyConverterServer {
         context.register(SpringConfiguration.class);
         context.refresh();
 
+
+        //stable DBRequest
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
 
         List<Currency> res=currencyDAOService.getCurrencies();
@@ -39,13 +41,9 @@ public class CurrencyConverterServer {
             }
         }
 
-        //stable DBrequest
-
-
-
 
         /*
-        //stable Request
+        //stable GETRequest
 
         CurrencyRequesterService requesterService = (CurrencyRequesterService) context.getBean("requesterService");
         requesterService.setService((CurrencyRequester) context.getBean("CurrencyOpenExchangeRate"));
@@ -71,10 +69,6 @@ public class CurrencyConverterServer {
             }
         }
 
-        */
-        /*
-        CurrencyDAOService service=new CurrencyDAOMySQL();
-        System.out.println(service.getCurrencies());
         */
     }
 }

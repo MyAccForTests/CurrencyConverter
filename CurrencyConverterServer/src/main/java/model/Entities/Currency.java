@@ -30,7 +30,7 @@ public class Currency implements Serializable{
     @Column(name = "Course")
     private Map<Calendar, Double> values=new HashMap<>();
 
-    private static final long serialVersionUID = 0000000000001L;
+    private static final long serialVersionUID = 1000000000000L;
 
     public Currency() {
     }

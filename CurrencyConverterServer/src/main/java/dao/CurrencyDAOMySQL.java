@@ -24,9 +24,10 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
 
     }
 
+    @SuppressWarnings("uncheked")
     public List<Currency> getCurrencies() {
         Session session=getSessionFactory().getCurrentSession();
-        Query query = session.createQuery("SELECT cur FROM Currency cur JOIN cur.values");
+        Query query = session.createQuery("FROM Currency cur JOIN cur.values");
         List<Currency> result=query.list();
         return result;
     }
