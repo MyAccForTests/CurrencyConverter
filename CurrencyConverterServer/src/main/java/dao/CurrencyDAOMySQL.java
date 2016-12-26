@@ -17,7 +17,14 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
     }
 
     public void add(List<Currency> list) {
-
+        /*
+        Session session=getSessionFactory().getCurrentSession();
+        for(Currency team:list)
+        {
+            session.save(team);
+            session.flush();
+        }
+        */
     }
 
     public void update(List<Currency> list) {
@@ -27,12 +34,13 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
     @SuppressWarnings("uncheked")
     public List<Currency> getCurrencies() {
         Session session=getSessionFactory().getCurrentSession();
-        Query query = session.createQuery("FROM Currency cur JOIN cur.values");
+        Query query = session.createQuery("FROM Currency");
         List<Currency> result=query.list();
         return result;
     }
 
     public List<Currency> getCurrencies(Calendar fromDate) {
+
         return null;
     }
 

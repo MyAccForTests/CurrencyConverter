@@ -25,6 +25,25 @@ public class CurrencyConverterServer {
         context.refresh();
 
 
+        /*
+        //stable DBAdder
+        CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
+        CurrencyRequesterService requesterService = (CurrencyRequesterService) context.getBean("requesterService");
+
+        Calendar ago=Calendar.getInstance();
+        ago.add(Calendar.DATE,-7);
+        Calendar now=Calendar.getInstance();
+
+        requesterService.setFromDate(ago);
+        requesterService.setToDate(now);
+
+        List<Currency> list =requesterService.getCurrencies();
+
+        currencyDAOService.add(list);
+        */
+
+
+        /*
         //stable DBRequest
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
 
@@ -40,6 +59,7 @@ public class CurrencyConverterServer {
                 System.out.println("Course is: "+ttt.getValue());
             }
         }
+        */
 
 
         /*
