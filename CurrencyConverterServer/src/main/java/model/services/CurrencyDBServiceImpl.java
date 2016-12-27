@@ -27,12 +27,12 @@ public class CurrencyDBServiceImpl implements CurrencyDAOService {
     }
 
     @Override
-    public void add(List<Currency> list) {
+    public void update(List<Currency> list) {
         service.add(list);
     }
 
     @Override
-    public void update(List<Currency> list) {
+    public void updateAll(List<Currency> list) {
         service.update(list);
     }
 

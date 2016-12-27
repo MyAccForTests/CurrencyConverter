@@ -25,13 +25,36 @@ public class CurrencyConverterServer {
         context.refresh();
 
 
+        //stable DBRequest FromDate
+        CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
+
+        Calendar now=Calendar.getInstance();
+
+
+        List<Currency> res=currencyDAOService.getCurrencies(now);
+        for(Currency s:res)
+        {
+            System.out.println(s.getAbbreviation());
+            Map<Calendar,Double> values=s.getValues();
+            for(Map.Entry<Calendar,Double> ttt:values.entrySet())
+            {
+                System.out.println("On: "+ttt.getKey().getTime().toString());
+                System.out.println("Course is: "+ttt.getValue());
+            }
+        }
+
+
+
+
+
+
         /*
         //stable DBAdder
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
         CurrencyRequesterService requesterService = (CurrencyRequesterService) context.getBean("requesterService");
 
         Calendar ago=Calendar.getInstance();
-        ago.add(Calendar.DATE,-7);
+        ago.update(Calendar.DATE,-7);
         Calendar now=Calendar.getInstance();
 
         requesterService.setFromDate(ago);
@@ -39,7 +62,7 @@ public class CurrencyConverterServer {
 
         List<Currency> list =requesterService.getCurrencies();
 
-        currencyDAOService.add(list);
+        currencyDAOService.update(list);
         */
 
 
@@ -48,7 +71,6 @@ public class CurrencyConverterServer {
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
 
         List<Currency> res=currencyDAOService.getCurrencies();
-        System.out.println(res.size());
         for(Currency s:res)
         {
             System.out.println(s.getAbbreviation());
@@ -68,7 +90,7 @@ public class CurrencyConverterServer {
         CurrencyRequesterService requesterService = (CurrencyRequesterService) context.getBean("requesterService");
         requesterService.setService((CurrencyRequester) context.getBean("CurrencyOpenExchangeRate"));
         Calendar ago=Calendar.getInstance();
-        ago.add(Calendar.DATE,-2);
+        ago.update(Calendar.DATE,-2);
         Calendar now=Calendar.getInstance();
 
         requesterService.setFromDate(ago);
