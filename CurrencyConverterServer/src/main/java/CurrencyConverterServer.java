@@ -29,14 +29,16 @@ public class CurrencyConverterServer {
 
         //stable DBRequest FromDate
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
-        currencyDAOService.update(requesterService.getCurrencies());
+        //currencyDAOService.update(requesterService.getCurrencies());
         Calendar now=Calendar.getInstance();
         now.set(2016,11,21);
 
         Calendar to=Calendar.getInstance();
         to.set(2016,11,22);
 
-        List<Currency> res=currencyDAOService.getCurrencies(now);
+        List<Currency> res=currencyDAOService.getCurrencies(now,to);
+
+        System.out.println(res.size());
         for(Currency s:res)
         {
             System.out.println(s.getAbbreviation());

@@ -27,15 +27,17 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
     public void update(List<Currency> list) {
         Session session=getSessionFactory().getCurrentSession();
         List<Currency> currencies=getCurrencies(Calendar.getInstance());
-        for(Currency temp:list)
+        for(Currency temp:currencies)
         {
-            for(Currency temp2:currencies)
+            for(Currency temp2:list)
             {
-                session.merge(temp);
-                session.saveOrUpdate(temp);
-                session.flush();
+                if(temp.getAbbreviation().equals(temp2.getAbbreviation()))
+                {
+                    temp.getValues().putAll(temp2.getValues());
+                }
             }
         }
+        session.saveOrUpdate(list);
     }
 
     public void updateAll(List<Currency> list) {
@@ -52,15 +54,15 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
     public List<Currency> getCurrencies() {
         Session session=getSessionFactory().getCurrentSession();
         //HQL-based
-         /*
-        Query query=session.createQuery("FROM Currency");
+        Query query=session.createQuery("FROM Currency cur JOIN FETCH cur.values");
         return query.list();
-        */
+        /*
         //Criteria-based
         CriteriaBuilder criteriaBuilder=session.getCriteriaBuilder();
         CriteriaQuery<Currency> criteriaQuery=criteriaBuilder.createQuery(Currency.class);
         criteriaQuery.from(Currency.class);
         return session.createQuery(criteriaQuery).getResultList();
+        */
     }
 
     public List<Currency> getCurrencies(Calendar fromDate) {
@@ -68,7 +70,6 @@ public class CurrencyDAOMySQL extends CurrencyDAOAbstract {
         fromDate.set(Calendar.HOUR,00);
         Session session=getSessionFactory().getCurrentSession();
         //HQL-based
-
         Query query=session.createQuery("SELECT DISTINCT cur FROM Currency cur JOIN fetch cur.values val WHERE index(val)>= :fromDate");
         query.setParameter("fromDate",fromDate,TemporalType.DATE);
         return query.list();

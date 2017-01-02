@@ -36,14 +36,13 @@ public class Currency implements Serializable{
     public Currency() {
     }
 
-    public Currency(String abbreviation, String name, HashMap<Calendar, Double> values) {
+    public Currency(String abbreviation, HashMap<Calendar, Double> values) {
         this.abbreviation = abbreviation;
         this.values = values;
     }
 
-    public Currency(String abbreviation, HashMap<Calendar, Double> values) {
-        this.abbreviation = abbreviation;
-        this.values = values;
+    public int getId() {
+        return id;
     }
 
     public void setAbbreviation(String abbreviation) {
