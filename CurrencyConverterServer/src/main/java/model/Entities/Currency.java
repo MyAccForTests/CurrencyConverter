@@ -21,7 +21,7 @@ public class Currency implements Serializable{
     @Column(name = "Abbreviation")
     private String abbreviation;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(
             name = "courses",
             joinColumns = @JoinColumn(name = "CurrencyID")

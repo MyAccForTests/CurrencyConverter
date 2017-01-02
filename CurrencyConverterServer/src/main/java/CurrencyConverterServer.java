@@ -24,12 +24,17 @@ public class CurrencyConverterServer {
         context.register(SpringConfiguration.class);
         context.refresh();
 
+        CurrencyRequesterService requesterService = (CurrencyRequesterService) context.getBean("requesterService");
+        requesterService.setService((CurrencyRequester) context.getBean("CurrencyOpenExchangeRate"));
 
         //stable DBRequest FromDate
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
-
+        currencyDAOService.update(requesterService.getCurrencies());
         Calendar now=Calendar.getInstance();
+        now.set(2016,11,21);
 
+        Calendar to=Calendar.getInstance();
+        to.set(2016,11,22);
 
         List<Currency> res=currencyDAOService.getCurrencies(now);
         for(Currency s:res)
