@@ -1,6 +1,7 @@
 package requesters;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import model.entities.Currency;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,6 +12,7 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
+/*
 @Repository("FixerIO")
 public class CurrencyFixerioRequester extends CurrencyRequesterAbstract {
     //request format: "http://api.fixer.io/2000-01-01?base=USD"
@@ -27,11 +29,11 @@ public class CurrencyFixerioRequester extends CurrencyRequesterAbstract {
         super(fromDate, toDate);
     }
     //abstract method realisation
-    public List<model.entities.Currency> getCurrencies()
+    public List<Currency> getCurrencies()
     {
         RestTemplate restTemplate = new RestTemplate();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        HashMap<String, model.entities.Currency> tempResult = new HashMap<String, model.entities.Currency>();
+        HashMap<String, model.entities.Currency> tempResult = new HashMap<String, Currency>();
         while (getFromDate().compareTo(getToDate()) <= 0) {
             StringBuilder url = new StringBuilder(urlTemplateFirst);
             url.append(sdf.format(getFromDate().getTime()));
@@ -41,16 +43,16 @@ public class CurrencyFixerioRequester extends CurrencyRequesterAbstract {
             addCurrencyToList(tempResult, incomingResponse);
             getFromDate().add(Calendar.DATE, 1);
         }
-        return new ArrayList<model.entities.Currency>(tempResult.values());
+        return new ArrayList<Currency>(tempResult.values());
     }
     //some helping methods
-    private void addCurrencyToList(HashMap<String, model.entities.Currency> map, IncomingResponse incomingResponse)
+    private void addCurrencyToList(HashMap<String, Currency> map, IncomingResponse incomingResponse)
     {
         for(Map.Entry<String,Double> entry:incomingResponse.getRates().entrySet())
         {
             if(!map.containsKey(entry.getKey()))
             {
-                map.put(entry.getKey(),new model.entities.Currency(entry.getKey(),new HashMap<Calendar, Double>()));
+                map.put(entry.getKey(),new Currency(entry.getKey(),new HashMap<Calendar, Double>()));
             }
             Calendar date=Calendar.getInstance();
             date.setTime(incomingResponse.getDate());
@@ -93,3 +95,4 @@ public class CurrencyFixerioRequester extends CurrencyRequesterAbstract {
         }
     }
 }
+*/

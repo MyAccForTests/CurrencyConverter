@@ -1,7 +1,7 @@
 package model.services;
 
 import dao.CurrencyDAO;
-import model.entities.Currency;
+import model.entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,27 +27,27 @@ public class CurrencyDBServiceImpl implements CurrencyDAOService {
     }
 
     @Override
-    public void update(List<Currency> list) {
+    public void update(List<Course> list) {
         service.add(list);
     }
 
     @Override
-    public void updateAll(List<Currency> list) {
+    public void updateAll(List<Course> list) {
         service.update(list);
     }
 
     @Override
-    public List<Currency> getCurrencies() {
-        return service.getCurrencies();
+    public List<Course> getCourses() {
+        return service.getCourses();
     }
 
     @Override
-    public List<Currency> getCurrencies(Calendar fromDate) {
-        return service.getCurrencies(fromDate);
+    public List<Course> getCourses(Calendar fromDate) {
+        return service.getCourses(fromDate);
     }
 
     @Override
-    public List<Currency> getCurrencies(Calendar fromDate, Calendar toDate) {
-        return service.getCurrencies(fromDate, toDate);
+    public List<Course> getCourses(Calendar fromDate, Calendar toDate) {
+        return service.getCourses(fromDate, toDate);
     }
 }

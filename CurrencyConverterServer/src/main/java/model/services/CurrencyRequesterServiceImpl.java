@@ -1,10 +1,10 @@
 package model.services;
 
+import model.entities.Currency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import requesters.CurrencyRequester;
-import model.entities.Currency;
 
 import java.util.Calendar;
 import java.util.List;
@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
+/*
 @Service("requesterService")
 public class CurrencyRequesterServiceImpl implements CurrencyRequesterService {
 
@@ -55,3 +56,4 @@ public class CurrencyRequesterServiceImpl implements CurrencyRequesterService {
         service.setToDate(toDate);
     }
 }
+*/

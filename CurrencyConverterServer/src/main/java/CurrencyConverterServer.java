@@ -1,9 +1,6 @@
-import dao.CurrencyDAO;
-import model.entities.Currency;
+import model.entities.Course;
 import model.services.CurrencyDAOService;
-import model.services.CurrencyRequesterService;
 import org.apache.log4j.BasicConfigurator;
-import requesters.CurrencyRequester;
 import settings.SpringConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -24,30 +21,25 @@ public class CurrencyConverterServer {
         context.register(SpringConfiguration.class);
         context.refresh();
 
-        CurrencyRequesterService requesterService = (CurrencyRequesterService) context.getBean("requesterService");
-        requesterService.setService((CurrencyRequester) context.getBean("CurrencyOpenExchangeRate"));
+        //CurrencyRequesterService requesterService = (CurrencyRequesterService) context.getBean("requesterService");
+        //requesterService.setService((CurrencyRequester) context.getBean("CurrencyOpenExchangeRate"));
 
         //stable DBRequest FromDate
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
-        //currencyDAOService.update(requesterService.getCurrencies());
+        //currencyDAOService.update(requesterService.getCurrency());
         Calendar now=Calendar.getInstance();
         now.set(2016,11,21);
 
         Calendar to=Calendar.getInstance();
         to.set(2016,11,22);
 
-        List<Currency> res=currencyDAOService.getCurrencies(now,to);
+        List<Course> res=currencyDAOService.getCourses();
 
-        System.out.println(res.size());
-        for(Currency s:res)
+        for(Course s:res)
         {
-            System.out.println(s.getAbbreviation());
-            Map<Calendar,Double> values=s.getValues();
-            for(Map.Entry<Calendar,Double> ttt:values.entrySet())
-            {
-                System.out.println("On: "+ttt.getKey().getTime().toString());
-                System.out.println("Course is: "+ttt.getValue());
-            }
+            System.out.println(s.getCurrency().getAbbreviation());
+            System.out.println(s.getDate().getTime());
+            System.out.println(s.getCourse());
         }
 
 
@@ -67,7 +59,7 @@ public class CurrencyConverterServer {
         requesterService.setFromDate(ago);
         requesterService.setToDate(now);
 
-        List<Currency> list =requesterService.getCurrencies();
+        List<Currency> list =requesterService.getCurrency();
 
         currencyDAOService.update(list);
         */
@@ -77,7 +69,7 @@ public class CurrencyConverterServer {
         //stable DBRequest
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
 
-        List<Currency> res=currencyDAOService.getCurrencies();
+        List<Currency> res=currencyDAOService.getCurrency();
         for(Currency s:res)
         {
             System.out.println(s.getAbbreviation());
@@ -103,7 +95,7 @@ public class CurrencyConverterServer {
         requesterService.setFromDate(ago);
         requesterService.setToDate(now);
 
-        List<Currency> list =requesterService.getCurrencies();
+        List<Currency> list =requesterService.getCurrency();
         //
 
         //testing
