@@ -13,9 +13,27 @@ public class Course implements Serializable{
 
     private static final long serialVersionUID = 1000000000000L;
 
+    public Course(Double course, Calendar date, Currency currency) {
+        this.course = course;
+        this.date = date;
+        this.currency = currency;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setCourse(Double course) {
+        this.course = course;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
 
     @Column(name = "Course")
     private Double course;
@@ -24,7 +42,7 @@ public class Course implements Serializable{
     @Temporal(TemporalType.DATE)
     private Calendar date;
 
-    @ManyToOne//(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "CurrencyID")
     private Currency currency;
     public Course() {
@@ -40,5 +58,15 @@ public class Course implements Serializable{
 
     public Currency getCurrency() {
         return currency;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", course=" + course +
+                ", date=" + date +
+                ", currency=" + currency +
+                '}';
     }
 }

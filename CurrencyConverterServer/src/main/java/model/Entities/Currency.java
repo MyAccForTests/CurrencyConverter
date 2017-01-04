@@ -16,6 +16,18 @@ public class Currency implements Serializable{
 
     private static final long serialVersionUID = 2000000000000L;
 
+    public Currency(String abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setAbbreviation(String abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -28,5 +40,13 @@ public class Currency implements Serializable{
 
     public String getAbbreviation() {
         return abbreviation;
+    }
+
+    @Override
+    public String toString() {
+        return "Currency{" +
+                "id=" + id +
+                ", abbreviation='" + abbreviation + '\'' +
+                '}';
     }
 }

@@ -1,6 +1,7 @@
 package dao;
 
 import model.entities.Course;
+import model.entities.Currency;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,23 +23,26 @@ public abstract class CurrencyDAOAbstract implements CurrencyDAO {
     }
 
     @Override
-    public void add(List<Course> list) {}
+    public abstract void updateCurrency(Currency currency);
 
     @Override
-    public void update(List<Course> list) {}
+    public abstract void updateCurrencies(List<Currency> currencies);
 
     @Override
-    public List<Course> getCourses() {
-        return null;
-    }
+    public abstract  Currency getCurrency(String abbreviation);
 
     @Override
-    public List<Course> getCourses(Calendar fromDate) {
-        return null;
-    }
+    public abstract List<Currency> getCurrencies();
 
     @Override
-    public List<Course> getCourses(Calendar fromDate, Calendar toDate) {
-        return null;
-    }
+    public abstract void updateCourses(List<Course> list);
+
+    @Override
+    public abstract List<Course> getCourses();
+
+    @Override
+    public abstract List<Course> getCourses(Calendar fromDate);
+
+    @Override
+    public abstract List<Course> getCourses(Calendar fromDate, Calendar toDate);
 }

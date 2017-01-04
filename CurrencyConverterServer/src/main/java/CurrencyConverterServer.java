@@ -1,4 +1,5 @@
-import model.entities.Course;
+import model.entities.*;
+import model.entities.Currency;
 import model.services.CurrencyDAOService;
 import org.apache.log4j.BasicConfigurator;
 import settings.SpringConfiguration;
@@ -26,26 +27,35 @@ public class CurrencyConverterServer {
 
         //stable DBRequest FromDate
         CurrencyDAOService currencyDAOService = (CurrencyDAOService) context.getBean("dbService");
-        //currencyDAOService.update(requesterService.getCurrency());
+
         Calendar now=Calendar.getInstance();
-        now.set(2016,11,21);
+        now.set(2017,11,21);
 
         Calendar to=Calendar.getInstance();
-        to.set(2016,11,22);
+        to.set(2016,11,23);
 
-        List<Course> res=currencyDAOService.getCourses();
 
+        /*
+        //Testing DB Services
+        Calendar c=Calendar.getInstance();
+        c.set(2017,00,05);
+        List<Course> forSave=new ArrayList<>();
+        forSave.add(new Course(11.11,Calendar.getInstance(),new Currency("RUB")));
+        forSave.add(new Course(11.11,Calendar.getInstance(),new Currency("AAA")));
+        forSave.add(new Course(11.11,Calendar.getInstance(),new Currency("RUB")));
+        forSave.add(new Course(11.11,Calendar.getInstance(),new Currency("AAB")));
+        forSave.add(new Course(11.11,c,new Currency("AAA")));
+
+        currencyDAOService.updateCourses(forSave);
+
+        List<Course> res=currencyDAOService.getCourses(now, to);
         for(Course s:res)
         {
             System.out.println(s.getCurrency().getAbbreviation());
             System.out.println(s.getDate().getTime());
             System.out.println(s.getCourse());
         }
-
-
-
-
-
+        */
 
         /*
         //stable DBAdder
