@@ -9,7 +9,7 @@ import java.util.Calendar;
  */
 @Entity
 @Table(name = "courses")
-public class Course implements Serializable{
+public class Course implements Serializable {
 
     private static final long serialVersionUID = 1000000000000L;
 
@@ -45,6 +45,7 @@ public class Course implements Serializable{
     @ManyToOne
     @JoinColumn(name = "CurrencyID")
     private Currency currency;
+
     public Course() {
     }
 

@@ -2,17 +2,13 @@ package model.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Created by Ilua on 12.12.2016.
  */
 @Entity
 @Table(name = "currencies")
-public class Currency implements Serializable{
+public class Currency implements Serializable {
 
     private static final long serialVersionUID = 2000000000000L;
 

@@ -1,6 +1,6 @@
 package model.services;
 
-import dao.CurrencyDAO;
+import databaseDAO.CourseDAO;
 import model.entities.Course;
 import model.entities.Currency;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +15,12 @@ import java.util.List;
  */
 @Service("dbService")
 @Transactional
-public class CurrencyDBServiceImpl implements CurrencyDAOService {
+public class CourseDBServiceImpl implements CourseDAOService {
 
     @Autowired
-    private CurrencyDAO service;
+    private CourseDAO service;
 
-    public CurrencyDBServiceImpl() {
-    }
-
-    public CurrencyDBServiceImpl(CurrencyDAO service) {
-        this.service = service;
+    public CourseDBServiceImpl() {
     }
 
     @Override
@@ -34,7 +30,7 @@ public class CurrencyDBServiceImpl implements CurrencyDAOService {
 
     @Override
     public void updateCurrencies(List<Currency> currencies) {
-        service.updateCurrencies(currencies);
+        updateCurrencies(currencies);
     }
 
     @Override
@@ -69,6 +65,16 @@ public class CurrencyDBServiceImpl implements CurrencyDAOService {
 
     @Override
     public List<Course> getCourses(Calendar fromDate, Calendar toDate) {
-        return service.getCourses(fromDate, toDate);
+        return service.getCourses(fromDate,toDate);
+    }
+
+    @Override
+    public CourseDAO getService() {
+        return service;
+    }
+
+    @Override
+    public void setService(CourseDAO courseDAOService) {
+        service=courseDAOService;
     }
 }

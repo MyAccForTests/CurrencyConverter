@@ -3,6 +3,7 @@ package settings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
 import java.util.Properties;
 import javax.sql.DataSource;
 
@@ -23,10 +24,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfiguration {
     @Autowired
     private Environment environment;
-    private String[] entities=new String[] { "model.entities" };
+    private String[] entities = new String[]{"model.entities"};
 
     @Bean
-    public LocalSessionFactoryBean  sessionFactory() {
+    public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan(entities);

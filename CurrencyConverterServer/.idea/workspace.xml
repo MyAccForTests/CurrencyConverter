@@ -20,40 +20,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Currency.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Currency.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-              <folding>
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#620#621#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Course.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-              <folding>
-                <element signature="e#676#677#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CurrencyConverterServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CurrencyConverterServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CurrencyConverterServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+            <state relative-caret-position="343">
+              <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseScheduleUpdaterService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CourseScheduleUpdaterService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="67" column="52" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,8 +60,12 @@
       <find>CHF</find>
       <find>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</find>
       <find>sql</find>
-      <find>rub</find>
       <find>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</find>
+      <find>rub</find>
+      <find>log</find>
+      <find>LOG</find>
+      <find>fixer</find>
+      <find>io</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -88,22 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/Sevices/CurrencyMySQLService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/RequestersService/RequestersController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/RequestersService/RequesterService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Services/DBSevice/CurrencyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CurrencyMySQLDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CurrencyMySQL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Services/Entity/Currency.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Requesters/OpenexchangerateRequester.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Settings/SpringConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Settings/SpringRequestersConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Settings/SpringServicesConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Settings/SpringDAOConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Services/RequestersService/RequesterService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/CurrencyDAOMySQL.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/MySQL.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/settings/SpringServicesConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/settings/DAOSettings/SpringDAOConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/settings/RequestersSettings/SpringRequestersConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/settings/DAOSettings/SpringDAOMySQLConfiguration.java" />
@@ -122,23 +94,39 @@
         <option value="$PROJECT_DIR$/src/main/java/settings/CurrencyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyRequester.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyRequesterService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/settings/HibernateConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/model/entities/Currencyn.java" />
-        <option value="$PROJECT_DIR$/src/main/java/requesters/CurrencyOpenexchangerateRequester.java" />
-        <option value="$PROJECT_DIR$/src/main/java/requesters/CurrencyFixerioRequester.java" />
-        <option value="$PROJECT_DIR$/src/main/java/settings/SpringConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyRequesterServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/entities/Currency.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CurrencyDAOAbstract.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/entities/Course.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyDAOService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CurrencyDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyDBServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requesters/Currency.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/CurrencyDAOMySQL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/CurrencyDAOAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requesters/CurrencyFixerioRequester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requesters/CurrencyOpenexchangerateRequester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/CurrencyDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/entities/Course.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/entities/Currency.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyDAOService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyDBServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyRequesterServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requesters/CurrencyRequesterAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/settings/HibernateConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/settings/SpringConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requesters/CurrencyRequester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CurrencyRequesterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/databaseDAO/CurrencyDAOMySQL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requestersDAO/CourseRequester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requestersDAO/CourseRequesterAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/databaseDAO/CourseDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CourseRequesterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CourseDAOService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CourseRequesterServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requestersDAO/CourseFixerioRequester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/databaseDAO/CourseDAOAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CourseDBServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/requestersDAO/CourseOpenexchangerateRequester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/services/CourseScheduleUpdaterService.java" />
         <option value="$PROJECT_DIR$/src/main/java/CurrencyConverterServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/databaseDAO/CourseDAOMySQL.java" />
       </list>
     </option>
   </component>
@@ -190,9 +178,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,7 +284,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="requesters" />
+              <option name="myItemId" value="requestersDAO" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,12 +370,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="databaseDAO" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,6 +385,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/SystemUser/0_Files/Programming/Repository/CurrencyConverter/CurrencyConverterServer/src/main/java/model/services/CourseRequesterService.java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -654,7 +643,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -663,15 +652,16 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40169132" sideWeight="0.5083333" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40063426" sideWeight="0.5104167" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40063426" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40063426" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -683,7 +673,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -709,8 +698,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Currency.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
@@ -727,7 +714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CurrencyDAOMySQL.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/databaseDAO/CourseDAOMySQL.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Currency.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -762,8 +749,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyFixerioRequester.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyRequesterAbstract.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseFixerioRequester.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseRequesterAbstract.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
@@ -780,8 +767,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyFixerioRequester.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyRequesterAbstract.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseFixerioRequester.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseRequesterAbstract.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -791,7 +778,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Currency.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyFixerioRequester.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseFixerioRequester.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/CurrencyConverterServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -844,21 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/settings/HibernateConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.2.6.Final/hibernate-core-5.2.6.Final.jar!/org/hibernate/hql/internal/ast/tree/MethodNode.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -874,197 +846,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyFixerioRequester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="97" column="2" lean-forward="false" selection-start-line="97" selection-start-column="2" selection-end-line="97" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1483400211408" expanded="false" signature="806:817" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="833:839" ph=" }" />
-            <marker date="1483400211408" expanded="false" signature="963:974" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="998:1004" ph=" }" />
-            <marker date="1483400211408" expanded="false" signature="1283:1301" ph="&lt;~&gt;" />
-            <marker date="1483400211408" expanded="false" signature="2812:2827" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="2839:2849" ph=" }" />
-            <marker date="1483400211408" expanded="false" signature="2892:2907" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="2924:2934" ph=" }" />
-            <marker date="1483400211408" expanded="false" signature="2966:2981" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="2993:3003" ph=" }" />
-            <marker date="1483400211408" expanded="false" signature="3044:3059" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="3076:3086" ph=" }" />
-            <marker date="1483400211408" expanded="false" signature="3138:3153" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="3166:3176" ph=" }" />
-            <marker date="1483400211408" expanded="false" signature="3238:3253" ph=" { " />
-            <marker date="1483400211408" expanded="false" signature="3272:3282" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyOpenexchangerateRequester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="101" column="2" lean-forward="false" selection-start-line="101" selection-start-column="2" selection-end-line="101" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1483400199135" expanded="false" signature="991:1002" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="1018:1024" ph=" }" />
-            <marker date="1483400199135" expanded="false" signature="1157:1168" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="1192:1198" ph=" }" />
-            <marker date="1483400199135" expanded="false" signature="1462:1480" ph="&lt;~&gt;" />
-            <marker date="1483400199135" expanded="false" signature="3125:3140" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="3152:3162" ph=" }" />
-            <marker date="1483400199135" expanded="false" signature="3205:3220" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="3237:3247" ph=" }" />
-            <marker date="1483400199135" expanded="false" signature="3284:3299" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="3316:3326" ph=" }" />
-            <marker date="1483400199135" expanded="false" signature="3377:3392" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="3419:3429" ph=" }" />
-            <marker date="1483400199135" expanded="false" signature="3481:3496" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="3509:3519" ph=" }" />
-            <marker date="1483400199135" expanded="false" signature="3581:3596" ph=" { " />
-            <marker date="1483400199135" expanded="false" signature="3615:3625" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CurrencyRequesterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CurrencyRequesterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="58" column="2" lean-forward="false" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1483400790576" expanded="false" signature="659:670" ph=" { " />
-            <marker date="1483400790576" expanded="false" signature="693:699" ph=" }" />
-            <marker date="1483400790576" expanded="false" signature="767:778" ph=" { " />
-            <marker date="1483400790576" expanded="false" signature="801:807" ph=" }" />
-            <marker date="1483400790576" expanded="false" signature="864:875" ph=" { " />
-            <marker date="1483400790576" expanded="false" signature="906:912" ph=" }" />
-            <marker date="1483400790576" expanded="false" signature="961:972" ph=" { " />
-            <marker date="1483400790576" expanded="false" signature="1001:1007" ph=" }" />
-            <marker date="1483400790576" expanded="false" signature="1054:1065" ph=" { " />
-            <marker date="1483400790576" expanded="false" signature="1092:1098" ph=" }" />
-            <marker date="1483400790576" expanded="false" signature="1160:1171" ph=" { " />
-            <marker date="1483400790576" expanded="false" signature="1201:1207" ph=" }" />
-            <marker date="1483400790576" expanded="false" signature="1265:1276" ph=" { " />
-            <marker date="1483400790576" expanded="false" signature="1302:1308" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/settings/SpringConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/Currency.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Course.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyRequester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/requesters/CurrencyRequesterAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CurrencyDAOAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CurrencyDAOService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="58" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CurrencyDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="58" lean-forward="false" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CurrencyDBServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1398#1399#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Currency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        <state relative-caret-position="204">
+          <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
           <folding>
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#472#473#0" expanded="false" />
+            <element signature="e#520#521#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CurrencyDAOMySQL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/settings/HibernateConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="87" column="34" lean-forward="true" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+        <state relative-caret-position="407">
+          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/settings/SpringConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseRequesterAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CourseRequesterServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
           <folding>
-            <element signature="e#3587#3597#0" expanded="true" />
-            <element signature="e#4990#5000#0" expanded="true" />
-            <element signature="e#5950#5960#0" expanded="true" />
-            <element signature="e#6021#6031#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/entities/Course.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CourseDAOService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        <state relative-caret-position="204">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#676#677#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/databaseDAO/CourseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/databaseDAO/CourseDAOAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#373#374#0" expanded="false" />
+            <element signature="e#410#411#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CourseDBServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="811">
+          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#640#641#0" expanded="false" />
+            <element signature="e#688#689#0" expanded="false" />
+            <element signature="e#765#766#0" expanded="false" />
+            <element signature="e#809#810#0" expanded="false" />
+            <element signature="e#1106#1107#0" expanded="false" />
+            <element signature="e#1149#1150#0" expanded="false" />
+            <element signature="e#1811#1812#0" expanded="false" />
+            <element signature="e#1851#1852#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseOpenexchangerateRequester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CourseRequesterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseRequester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/requestersDAO/CourseFixerioRequester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="60" column="12" lean-forward="false" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CurrencyConverterServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        <state relative-caret-position="343">
+          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/databaseDAO/CourseDAOMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="89" column="153" lean-forward="false" selection-start-line="89" selection-start-column="153" selection-end-line="89" selection-end-column="153" />
+          <folding>
+            <element signature="e#3436#3446#0" expanded="false" />
+            <element signature="e#4841#4851#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/services/CourseScheduleUpdaterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="67" column="52" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
