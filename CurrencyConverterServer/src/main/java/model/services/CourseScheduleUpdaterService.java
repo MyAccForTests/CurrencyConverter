@@ -1,6 +1,8 @@
 package model.services;
 
 import model.entities.Course;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
 import java.util.List;
@@ -8,8 +10,11 @@ import java.util.List;
 /**
  * Created by Ilua on 07.01.2017.
  */
+@Service("updateService")
 public class CourseScheduleUpdaterService {
+    @Autowired
     private CourseDAOService courseDAOService;
+    @Autowired
     private CourseRequesterService courseRequesterService;
 
     public CourseDAOService getCourseDAOService() {
@@ -36,15 +41,13 @@ public class CourseScheduleUpdaterService {
         this.courseRequesterService = courseRequesterService;
     }
 
-    public void update()
+    public void updateTodayAndVerifyPrevious()
     {
         Calendar from=updateToday();
         from.add(Calendar.DATE,-1);
         if(courseDAOService.getCourses(from, from).size()==0) {
-            System.out.println("LOG: NULL");
             while (courseDAOService.getCourses(from, from).size()==0) {
                 from.add(Calendar.DATE,-1);
-                System.out.println("LOG: DATE: "+from.get(Calendar.DATE));
             }
             updateFrom(from);
         }
@@ -68,19 +71,29 @@ public class CourseScheduleUpdaterService {
             courseDAOService.updateCourses(courses);
         }
     }
+
     public void updateFromTo(Calendar fromDate,Calendar toDate)
     {
-        List<Course> courses=courseRequesterService.getCourses(fromDate,toDate);
-        if(courses!=null)
-        {
-            courseDAOService.updateCourses(courses);
-        }
+            List<Course> courses=courseRequesterService.getCourses(fromDate,toDate);
+            if(courses.size()>0)
+            {
+                courseDAOService.updateCourses(courses);
+            }
     }
+
     public void updateAll()
     {
+        final int DATE_STEP=60;
         Calendar from=Calendar.getInstance();
+        Calendar today=Calendar.getInstance();
         Calendar to=Calendar.getInstance();
-        from.set(2000,00,01);
-        updateFromTo(from,to);
+        from.set(2000,00,01,00,01);
+        to.set(2000, 00, 01,23,59);
+        to.add(Calendar.DATE, DATE_STEP);
+        while (from.compareTo(today)<=0) {
+            updateFromTo(from, to);
+            from.add(Calendar.DATE, DATE_STEP);
+            to.add(Calendar.DATE, DATE_STEP);
+        }
     }
 }

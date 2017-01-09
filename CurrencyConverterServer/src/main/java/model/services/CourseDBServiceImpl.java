@@ -30,7 +30,7 @@ public class CourseDBServiceImpl implements CourseDAOService {
 
     @Override
     public void updateCurrencies(List<Currency> currencies) {
-        updateCurrencies(currencies);
+        service.updateCurrencies(currencies);
     }
 
     @Override
@@ -46,6 +46,11 @@ public class CourseDBServiceImpl implements CourseDAOService {
     @Override
     public void updateCourses(List<Course> list) {
         service.updateCourses(list);
+    }
+
+    @Override
+    public void updateCourse(Course course) {
+        service.updateCourse(course);
     }
 
     @Override

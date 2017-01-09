@@ -29,15 +29,17 @@ public class CurrencyConverterServer {
         //stable DBRequest FromDate
         CourseDAOService courseDAOService = (CourseDAOService) context.getBean("dbService");
 
-        CourseScheduleUpdaterService upd=new CourseScheduleUpdaterService(courseDAOService,requesterService);
+        CourseScheduleUpdaterService upd= (CourseScheduleUpdaterService) context.getBean("updateService");
         upd.updateAll();
+
         /*
         Calendar from = Calendar.getInstance();
         from.set(2016, 11, 30);
 
         Calendar to = Calendar.getInstance();
         to.set(2017, 00, 07);
-
+        */
+        /*
         List<Course> list=courseDAOService.getCourses(from,to);
         for(Course s:list)
         {

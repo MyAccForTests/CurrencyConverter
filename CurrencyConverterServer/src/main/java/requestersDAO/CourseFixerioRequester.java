@@ -44,8 +44,10 @@ public class CourseFixerioRequester extends CourseRequesterAbstract {
     }
 
     //some helping methods
-    private List<Course> getCoursesLocal(Calendar fromDate, Calendar toDate)
+    private List<Course> getCoursesLocal(Calendar from, Calendar to)
     {
+        Calendar fromDate= (Calendar) from.clone();
+        Calendar toDate= (Calendar) to.clone();
         RestTemplate restTemplate = new RestTemplate();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         List<Course> result = new ArrayList<>();
@@ -69,7 +71,7 @@ public class CourseFixerioRequester extends CourseRequesterAbstract {
         for (Map.Entry<String, Double> map : rates.entrySet()) {
             Calendar date = Calendar.getInstance();
             date.setTime(incomingResponse.getDate());
-            list.add(new Course(map.getValue(), date, new Currency(map.getKey())));
+            list.add(new Course(map.getValue(), date, Currency.CurrencySingletonFactory.getCurrency(map.getKey())));
         }
     }
 

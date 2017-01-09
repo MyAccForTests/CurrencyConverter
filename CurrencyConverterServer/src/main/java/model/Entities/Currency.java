@@ -2,6 +2,7 @@ package model.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  * Created by Ilua on 12.12.2016.
@@ -44,5 +45,18 @@ public class Currency implements Serializable {
                 "id=" + id +
                 ", abbreviation='" + abbreviation + '\'' +
                 '}';
+    }
+    public static class CurrencySingletonFactory
+    {
+        private static HashMap<String,Currency> holder=new HashMap<>();
+
+        public static Currency getCurrency(String abbreviation)
+        {
+            if(!holder.containsKey(abbreviation))
+            {
+                holder.put(abbreviation,new Currency(abbreviation));
+            }
+            return holder.get(abbreviation);
+        }
     }
 }

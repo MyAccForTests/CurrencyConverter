@@ -60,23 +60,31 @@ public class CourseDAOMySQL extends CourseDAOAbstract {
 
     @Override
     public void updateCourses(List<Course> list) {
-        Session session = getSessionFactory().getCurrentSession();
         for (Course course : list) {
-            if (course.getCurrency().getId() == 0) {
-                updateCurrency(course.getCurrency());
-                course.setCurrency(getCurrency(course.getCurrency().getAbbreviation()));
-            }
-            if (course.getId() == 0) {
-                Course course1 = getCourse(course.getDate(), course.getCurrency().getAbbreviation());
-                if (course1 == null) {
+            updateCourse(course);
+        }
+    }
+
+    @Override
+    public void updateCourse(Course course) {
+        Session session = getSessionFactory().getCurrentSession();
+        if (course.getCurrency().getId() == 0) {
+            updateCurrency(course.getCurrency());
+            course.setCurrency(getCurrency(course.getCurrency().getAbbreviation()));
+        }
+        if (course.getId() == 0) {
+            Course course1 = getCourse(course.getDate(), course.getCurrency().getAbbreviation());
+            if (course1 == null) {
+                try {
                     session.saveOrUpdate(course);
-                } else {
-                    course1.setCourse(course.getCourse());
-                    session.saveOrUpdate(course1);
                 }
+                catch (Exception e){System.out.println(e);}
             } else {
-                session.saveOrUpdate(course);
+                course1.setCourse(course.getCourse());
+                session.saveOrUpdate(course1);
             }
+        } else {
+            session.saveOrUpdate(course);
         }
     }
 

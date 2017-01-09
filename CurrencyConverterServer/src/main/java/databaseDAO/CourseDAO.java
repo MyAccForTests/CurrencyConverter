@@ -20,6 +20,8 @@ public interface CourseDAO {
 
     void updateCourses(List<Course> list);
 
+    void updateCourse(Course course);
+
     Course getCourse(Calendar onDate, String abbreviation);
 
     List<Course> getCourses();

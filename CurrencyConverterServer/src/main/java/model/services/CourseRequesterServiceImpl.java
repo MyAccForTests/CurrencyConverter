@@ -43,7 +43,7 @@ public class CourseRequesterServiceImpl implements CourseRequesterService {
     @Override
     public List<Course> getCourses(Calendar fromDate, Calendar toDate) {
 
-        return service.getCourses(fromDate);
+        return service.getCourses(fromDate,toDate);
     }
 
     @Override
