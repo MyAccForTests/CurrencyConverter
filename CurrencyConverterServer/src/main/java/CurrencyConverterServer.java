@@ -1,36 +1,46 @@
-import model.entities.Course;
-import model.services.CourseDAOService;
-import model.services.CourseRequesterService;
-import model.services.CourseScheduleUpdaterService;
 import org.apache.log4j.BasicConfigurator;
-import requestersDAO.CourseRequester;
 import settings.SpringConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Properties;
 
 
 /**
  * Created by Ilua on 13.12.2016.
  */
 public class CurrencyConverterServer {
+    private static Properties prop = new Properties();
+
     public static void main(String[] args) {
         //Please initialize the log4j system properly.//time-decision
         BasicConfigurator.configure();
         //
-
+        loadProperties();
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(SpringConfiguration.class);
+        context.getEnvironment().setActiveProfiles(String.valueOf(prop.get("server.database")), String.valueOf(prop.get("server.requester")));
         context.refresh();
-
-        CourseRequesterService requesterService = (CourseRequesterService) context.getBean("requesterService");
+        /*
+        if(args[0].toLowerCase().equals("updateall"))
+        {
+            ((CourseScheduleUpdaterService)context.getBean("UpdateService")).updateAll();
+        }
+        else
+        {
+            ((CourseScheduleUpdaterService)context.getBean("UpdateService")).updateTodayAndVerifyPrevious();
+        }
+        */
+        //CourseRequesterService requesterService = (CourseRequesterService) context.getBean("requesterService");
         //requesterService.setService((CourseRequester) context.getBean("CurrencyOpenExchangeRate"));
 
         //stable DBRequest FromDate
-        CourseDAOService courseDAOService = (CourseDAOService) context.getBean("dbService");
+        //CourseDAOService courseDAOService = (CourseDAOService) context.getBean("dbService");
 
-        CourseScheduleUpdaterService upd= (CourseScheduleUpdaterService) context.getBean("updateService");
-        upd.updateAll();
+        //CourseScheduleUpdaterService upd= (CourseScheduleUpdaterService) context.getBean("updateService");
 
         /*
         Calendar from = Calendar.getInstance();
@@ -59,4 +69,37 @@ public class CurrencyConverterServer {
         }
         */
     }
+
+    private static void loadProperties() {
+        try (FileInputStream input = new FileInputStream("src/main/resources/server.properties")) {
+            prop.load(input);
+        } catch (IOException e) {
+            prop.put("server.database", "MySQL");
+            prop.put("server.requester", "FixerIO");
+            try (OutputStream output = new FileOutputStream("src/main/resources/server.properties")) {
+                prop.store(output, null);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+
+    private enum Beans
+    {
+        DB_SERVICE("dbService"),
+        REQUESTER_SERVICE("requesterService"),
+        UPDATER_SERVICE("updateService");
+
+        private String text;
+
+        Beans(String text)
+        {
+            this.text=text;
+        }
+
+        public String getBeanName() {
+            return text;
+        }
+    }
+
 }

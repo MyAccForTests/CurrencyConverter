@@ -2,16 +2,26 @@ package model.services;
 
 import model.entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by Ilua on 07.01.2017.
  */
 @Service("updateService")
+@PropertySource(value = "classpath:schedule.properties")
 public class CourseScheduleUpdaterService {
+
     @Autowired
     private CourseDAOService courseDAOService;
     @Autowired
@@ -40,19 +50,22 @@ public class CourseScheduleUpdaterService {
         this.courseDAOService = courseDAOService;
         this.courseRequesterService = courseRequesterService;
     }
-
+    @Scheduled(fixedRateString = "${schedule.updateWithPreviousVerification}")
     public void updateTodayAndVerifyPrevious()
     {
         Calendar from=updateToday();
-        from.add(Calendar.DATE,-1);
-        if(courseDAOService.getCourses(from, from).size()==0) {
-            while (courseDAOService.getCourses(from, from).size()==0) {
-                from.add(Calendar.DATE,-1);
+        if(from!=null) {
+            from.add(Calendar.DATE, -1);
+            if (courseDAOService.getCourses(from, from).size() == 0) {
+                while (courseDAOService.getCourses(from, from).size() == 0) {
+                    from.add(Calendar.DATE, -1);
+                }
+                updateFrom(from);
             }
-            updateFrom(from);
         }
     }
 
+    @Scheduled(fixedRateString = "${schedule.update}")
     public Calendar updateToday()
     {
         List<Course> courses=courseRequesterService.getCourses();

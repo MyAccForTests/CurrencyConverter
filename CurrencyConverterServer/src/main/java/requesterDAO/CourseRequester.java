@@ -1,4 +1,4 @@
-package requestersDAO;
+package requesterDAO;
 
 import model.entities.Course;
 

@@ -1,7 +1,7 @@
 package model.services;
 
 import model.entities.Course;
-import requestersDAO.CourseRequester;
+import requesterDAO.CourseRequester;
 
 import java.util.Calendar;
 import java.util.List;

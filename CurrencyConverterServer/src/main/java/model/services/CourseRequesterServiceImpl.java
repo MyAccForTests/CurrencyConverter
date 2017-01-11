@@ -3,8 +3,9 @@ package model.services;
 import model.entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
-import requestersDAO.CourseRequester;
+import requesterDAO.CourseRequester;
 
 import java.util.Calendar;
 import java.util.List;
@@ -16,7 +17,6 @@ import java.util.List;
 public class CourseRequesterServiceImpl implements CourseRequesterService {
 
     @Autowired
-    @Qualifier("FixerIO")
     private CourseRequester service;
 
     public CourseRequesterServiceImpl() {

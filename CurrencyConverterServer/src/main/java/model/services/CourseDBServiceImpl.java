@@ -4,6 +4,8 @@ import databaseDAO.CourseDAO;
 import model.entities.Course;
 import model.entities.Currency;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +15,7 @@ import java.util.List;
 /**
  * Created by Ilua on 15.12.2016.
  */
+
 @Service("dbService")
 @Transactional
 public class CourseDBServiceImpl implements CourseDAOService {

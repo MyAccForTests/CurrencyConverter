@@ -1,11 +1,16 @@
-package requestersDAO;
+package requesterDAO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import model.entities.Course;
 import model.entities.Currency;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -13,17 +18,37 @@ import java.util.*;
 /**
  * Created by Ilua on 13.12.2016.
  */
-@Repository("CurrencyOpenExchangeRate")
-public class CourseOpenexchangerateRequester extends CourseRequesterAbstract {
-    //request format: "https://openexchangerates.org/api/historical/2001-02-16.json?app_id=YOUR_APP_APP_ID"
-    private String urlTemplateFirst = "https://openexchangerates.org/api/historical/";
-    private String appID = "f437a02f7306440a813e8d277a75bb9c";
-    private String urlTemplateSecond = ".json?app_id=" + appID;
 
-    public CourseOpenexchangerateRequester() {
+@Repository("FixerIO")
+@Profile("FixerIO")
+public class CourseFixerioRequester extends CourseRequesterAbstract {
+    //request format: "http://api.fixer.io/2000-01-01?base=USD"
+    private final String urlTemplateFirst;
+    private final String urlTemplateSecond;
+
+    private static Properties prop = new Properties();
+
+    {
+        try(FileInputStream input=new FileInputStream("src/main/resources/requester.properties")) {
+            prop.load(input);
+        } catch (IOException e) {
+            prop.put("requester.fixerio.baseurl", "http://api.fixer.io/");
+            prop.put("requester.fixerio.baseurl2","?base=USD");
+            try(OutputStream output = new FileOutputStream("src/main/resources/requester.properties"))
+            {
+                prop.store(output,null);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        urlTemplateFirst=prop.getProperty("requester.fixerio.baseurl");
+        urlTemplateSecond=prop.getProperty("requester.fixerio.baseurl2");
     }
 
-    public List<Course> getCourses() {
+    public CourseFixerioRequester() {
+    }
+
+    public synchronized List<Course> getCourses() {
         Calendar today=Calendar.getInstance();
         Calendar to= (Calendar) today.clone();
         to.add(Calendar.MILLISECOND,100);
@@ -31,14 +56,14 @@ public class CourseOpenexchangerateRequester extends CourseRequesterAbstract {
     }
 
     @Override
-    public List<Course> getCourses(Calendar fromDate) {
+    public synchronized List<Course> getCourses(Calendar fromDate) {
         Calendar today=Calendar.getInstance();
         today.add(Calendar.MILLISECOND,100);
         return getCoursesLocal(fromDate,today);
     }
 
     @Override
-    public List<Course> getCourses(Calendar fromDate, Calendar toDate) {
+    public synchronized List<Course> getCourses(Calendar fromDate, Calendar toDate) {
         toDate.add(Calendar.MILLISECOND,100);
         return getCoursesLocal(fromDate,toDate);
     }
@@ -70,19 +95,16 @@ public class CourseOpenexchangerateRequester extends CourseRequesterAbstract {
         HashMap<String, Double> rates = incomingResponse.getRates();
         for (Map.Entry<String, Double> map : rates.entrySet()) {
             Calendar date = Calendar.getInstance();
-            date.setTime(new Date(incomingResponse.getTimestamp().getTime() * 1000));
+            date.setTime(incomingResponse.getDate());
             list.add(new Course(map.getValue(), date, Currency.CurrencySingletonFactory.getCurrency(map.getKey())));
         }
-
     }
 
-    //inner class for data from OpenExchangeRates.org
+    //inner class for data from Fixer.io
     @JsonIgnoreProperties(ignoreUnknown = true)
     private static class IncomingResponse {
-        //private String disclaimer;
-        //private String license;
-        private Date timestamp;
         private String base;
+        private Date date;
         private HashMap<String, Double> rates;
 
         private IncomingResponse() {
@@ -96,12 +118,12 @@ public class CourseOpenexchangerateRequester extends CourseRequesterAbstract {
             this.base = base;
         }
 
-        private Date getTimestamp() {
-            return timestamp;
+        private Date getDate() {
+            return date;
         }
 
-        private void setTimestamp(Date timestamp) {
-            this.timestamp = timestamp;
+        private void setDate(Date date) {
+            this.date = date;
         }
 
         private HashMap<String, Double> getRates() {

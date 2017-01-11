@@ -3,6 +3,7 @@ package databaseDAO;
 import model.entities.*;
 import model.entities.Currency;
 import org.hibernate.Session;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -15,6 +16,7 @@ import java.util.*;
  * Created by Ilua on 14.12.2016.
  */
 @Repository("MySQL")
+@Profile("MySQL")
 public class CourseDAOMySQL extends CourseDAOAbstract {
     public CourseDAOMySQL() {
     }

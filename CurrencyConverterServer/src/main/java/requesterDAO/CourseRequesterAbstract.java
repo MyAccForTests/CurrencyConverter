@@ -1,6 +1,4 @@
-package requestersDAO;
-
-import java.util.Calendar;
+package requesterDAO;
 
 /**
  * Created by Ilua on 13.12.2016.
