@@ -66,7 +66,7 @@ public class CourseScheduleUpdaterService {
     }
 
     @Scheduled(fixedRateString = "${schedule.update}")
-    public Calendar updateToday()
+    public synchronized Calendar updateToday()
     {
         List<Course> courses=courseRequesterService.getCourses();
         if(courses!=null)

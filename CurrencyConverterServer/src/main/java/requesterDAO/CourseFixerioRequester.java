@@ -48,7 +48,7 @@ public class CourseFixerioRequester extends CourseRequesterAbstract {
     public CourseFixerioRequester() {
     }
 
-    public synchronized List<Course> getCourses() {
+    public List<Course> getCourses() {
         Calendar today=Calendar.getInstance();
         Calendar to= (Calendar) today.clone();
         to.add(Calendar.MILLISECOND,100);
@@ -56,14 +56,14 @@ public class CourseFixerioRequester extends CourseRequesterAbstract {
     }
 
     @Override
-    public synchronized List<Course> getCourses(Calendar fromDate) {
+    public List<Course> getCourses(Calendar fromDate) {
         Calendar today=Calendar.getInstance();
         today.add(Calendar.MILLISECOND,100);
         return getCoursesLocal(fromDate,today);
     }
 
     @Override
-    public synchronized List<Course> getCourses(Calendar fromDate, Calendar toDate) {
+    public List<Course> getCourses(Calendar fromDate, Calendar toDate) {
         toDate.add(Calendar.MILLISECOND,100);
         return getCoursesLocal(fromDate,toDate);
     }

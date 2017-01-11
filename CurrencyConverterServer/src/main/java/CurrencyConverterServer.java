@@ -24,20 +24,9 @@ public class CurrencyConverterServer {
         context.register(SpringConfiguration.class);
         context.getEnvironment().setActiveProfiles(String.valueOf(prop.get("server.database")), String.valueOf(prop.get("server.requester")));
         context.refresh();
-        /*
-        if(args[0].toLowerCase().equals("updateall"))
-        {
-            ((CourseScheduleUpdaterService)context.getBean("UpdateService")).updateAll();
-        }
-        else
-        {
-            ((CourseScheduleUpdaterService)context.getBean("UpdateService")).updateTodayAndVerifyPrevious();
-        }
-        */
-        //CourseRequesterService requesterService = (CourseRequesterService) context.getBean("requesterService");
-        //requesterService.setService((CourseRequester) context.getBean("CurrencyOpenExchangeRate"));
 
-        //stable DBRequest FromDate
+        //CourseRequesterService requesterService = (CourseRequesterService) context.getBean("requesterService");
+
         //CourseDAOService courseDAOService = (CourseDAOService) context.getBean("dbService");
 
         //CourseScheduleUpdaterService upd= (CourseScheduleUpdaterService) context.getBean("updateService");
