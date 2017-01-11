@@ -45,11 +45,11 @@
             <artifactId>spring-orm</artifactId>
             <version>4.3.4.RELEASE</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-webmvc -->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-rest-webmvc</artifactId>
-            <version>2.5.5.RELEASE</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.3.4.RELEASE</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
         <dependency>
@@ -93,6 +93,8 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.40</version>
         </dependency>
+
+
     </dependencies>
 
 </project>
