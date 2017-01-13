@@ -1,6 +1,6 @@
 package model.services;
 
-import databaseDAO.CourseDAO;
+import database.CourseDAO;
 import model.entities.Course;
 import model.entities.Currency;
 

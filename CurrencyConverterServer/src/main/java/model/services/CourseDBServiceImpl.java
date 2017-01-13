@@ -1,11 +1,9 @@
 package model.services;
 
-import databaseDAO.CourseDAO;
+import database.CourseDAO;
 import model.entities.Course;
 import model.entities.Currency;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

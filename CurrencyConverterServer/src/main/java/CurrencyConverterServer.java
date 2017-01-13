@@ -1,11 +1,13 @@
 import org.apache.log4j.BasicConfigurator;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 import settings.SpringConfiguration;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
+import java.io.*;
 import java.util.Properties;
 
 
@@ -13,52 +15,27 @@ import java.util.Properties;
  * Created by Ilua on 13.12.2016.
  */
 
-public class CurrencyConverterServer {
+public class CurrencyConverterServer implements WebApplicationInitializer
+{
     private static Properties prop = new Properties();
 
-    public static void main(String[] args) {
-        //Please initialize the log4j system properly.//time-decision
-        BasicConfigurator.configure();
-        //
-        loadProperties();
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.register(SpringConfiguration.class);
-        context.getEnvironment().setActiveProfiles(String.valueOf(prop.get("server.database")), String.valueOf(prop.get("server.requester")));
-        context.refresh();
 
-        //CourseRequesterService requesterService = (CourseRequesterService) context.getBean("requesterService");
-
-        //CourseDAOService courseDAOService = (CourseDAOService) context.getBean("dbService");
-
-        //CourseScheduleUpdaterService upd= (CourseScheduleUpdaterService) context.getBean("updateService");
-
-        /*
-        Calendar from = Calendar.getInstance();
-        from.set(2016, 11, 30);
-
-        Calendar to = Calendar.getInstance();
-        to.set(2017, 00, 07);
-        */
-        /*
-        List<Course> list=courseDAOService.getCourses(from,to);
-        for(Course s:list)
-        {
-            System.out.println(s.getCurrency().getAbbreviation());
-            System.out.println(s.getDate().getTime());
-            System.out.println(s.getCourse());
+        @Override
+        public void onStartup(ServletContext servletContext) throws ServletException {
+            //Please initialize the log4j system properly.//time-decision
+            BasicConfigurator.configure();
+            //
+            loadProperties();
+            AnnotationConfigWebApplicationContext context=new AnnotationConfigWebApplicationContext();
+            context.register(SpringConfiguration.class);
+            context.getEnvironment().setActiveProfiles(String.valueOf(prop.get("server.database")), String.valueOf(prop.get("server.requester")));
+            context.setServletContext(servletContext);
+            context.refresh();
+            ServletRegistration.Dynamic servlet = servletContext.addServlet(
+                    "dispatcher", new DispatcherServlet(context));
+            servlet.setLoadOnStartup(1);
+            servlet.addMapping("/");
         }
-        */
-        /*
-        //stable GETRequest
-        List<Course> list =requesterService.getCourses();
-        for(Course s:list)
-        {
-            System.out.println(s.getCurrency().getAbbreviation());
-            System.out.println(s.getDate().getTime());
-            System.out.println(s.getCourse());
-        }
-        */
-    }
 
     private static void loadProperties() {
         try (FileInputStream input = new FileInputStream("src/main/resources/server.properties")) {
@@ -74,17 +51,15 @@ public class CurrencyConverterServer {
         }
     }
 
-    private enum Beans
-    {
+    private enum Beans {
         DB_SERVICE("dbService"),
         REQUESTER_SERVICE("requesterService"),
         UPDATER_SERVICE("updateService");
 
         private String text;
 
-        Beans(String text)
-        {
-            this.text=text;
+        Beans(String text) {
+            this.text = text;
         }
 
         public String getBeanName() {
@@ -92,4 +67,32 @@ public class CurrencyConverterServer {
         }
     }
 
+/*
+    public static void main(String[] args) {
+        //Please initialize the log4j system properly.//time-decision
+        BasicConfigurator.configure();
+        //
+        loadProperties();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.register(SpringConfiguration.class);
+        context.getEnvironment().setActiveProfiles(String.valueOf(prop.get("server.database")), String.valueOf(prop.get("server.requester")));
+        context.refresh();
+
+        JSONController jsonController=context.getBean(JSONController.class);
+        JSONController.ResponseObject obj=jsonController.onDate("22-011-2015");
+
+        System.out.println(obj.getBase());
+        HashMap<String, List<JSONController.CurrencyValue>> values=obj.getValues();
+        for(Map.Entry<String, List<JSONController.CurrencyValue>> entry:values.entrySet())
+        {
+            System.out.println(entry.getKey());
+            List<JSONController.CurrencyValue> list=entry.getValue();
+            for(JSONController.CurrencyValue temp:list)
+            {
+                System.out.println(temp.getAbbreviation());
+                System.out.println(temp.getValue());
+            }
+        }
+    }
+*/
 }

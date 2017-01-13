@@ -2,10 +2,8 @@ package model.services;
 
 import model.entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
-import requesterDAO.CourseRequester;
+import requester.CourseRequester;
 
 import java.util.Calendar;
 import java.util.List;
