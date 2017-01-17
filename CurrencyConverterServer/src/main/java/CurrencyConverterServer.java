@@ -1,3 +1,4 @@
+import model.services.CourseScheduleUpdaterService;
 import org.apache.log4j.BasicConfigurator;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -31,6 +32,7 @@ public class CurrencyConverterServer implements WebApplicationInitializer
             context.getEnvironment().setActiveProfiles(String.valueOf(prop.get("server.database")), String.valueOf(prop.get("server.requester")));
             context.setServletContext(servletContext);
             context.refresh();
+            init(context);
             ServletRegistration.Dynamic servlet = servletContext.addServlet(
                     "dispatcher", new DispatcherServlet(context));
             servlet.setLoadOnStartup(1);
@@ -49,6 +51,12 @@ public class CurrencyConverterServer implements WebApplicationInitializer
                 e1.printStackTrace();
             }
         }
+    }
+
+    private static void init(AnnotationConfigWebApplicationContext context)
+    {
+        CourseScheduleUpdaterService updaterService = (CourseScheduleUpdaterService) context.getBean(Beans.UPDATER_SERVICE.getBeanName());
+        updaterService.updateTodayAndVerifyPrevious();
     }
 
     private enum Beans {
